@@ -28,14 +28,15 @@ Functions for setting and updating GitHub Actions secrets.
 
 # stdlib
 from base64 import b64encode
-from typing import Dict
 
 # 3rd party
 from apeye import URL
 from github3.repos import Repository  # type: ignore
 from nacl import encoding, public  # type: ignore
 from requests import Response
-from typing_extensions import TypedDict
+
+# this package
+from github3_utils._typing import make_typed_dict
 
 __all__ = [
 		"build_secrets_url",
@@ -57,14 +58,19 @@ def build_secrets_url(repo: Repository) -> URL:
 	return URL(repo._build_url("actions/secrets", base_url=repo._api))
 
 
-_keys = {"ETag": str, "Last-Modified": str, "key": str, "key_id": str}
-PublicKey = TypedDict("PublicKey", _keys, total=False)
-PublicKey.__doc__ = """
-:class:`typing.TypedDict` representing the return type of :func:`~.get_public_key`.
-"""
+_PublicKey = make_typed_dict("_PublicKey", {"ETag": str, "Last-Modified": str}, total=False)
 
 
-def get_public_key(repo: Repository) -> PublicKey:
+class PublicKey(_PublicKey):
+	"""
+	:class:`typing.TypedDict` representing the return type of :func:`~.get_public_key`.
+	"""
+
+	key: str
+	key_id: str
+
+
+def get_public_key(repo: Repository) -> "PublicKey":
 	"""
 	Returns the public key used to encrypt secrets for the given repository.
 
@@ -114,7 +120,7 @@ def set_secret(
 		repo: Repository,
 		secret_name: str,
 		value: str,
-		public_key: Dict[str, str],
+		public_key: "PublicKey",
 		) -> Response:
 	"""
 	Set the value of the given secret.
