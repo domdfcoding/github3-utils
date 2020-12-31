@@ -8,7 +8,17 @@ __all__ = ["make_typed_dict"]
 
 
 def make_typed_dict(typename, *args, total=True, **kwargs):
-	# Temporary fix until https://github.com/python/typing/issues/761 is merged
+	"""
+	Create a TypedDict.
+
+	Temporary fix until https://github.com/python/typing/issues/761 is merged.
+
+	:param typename:
+	:param args:
+	:param total:
+	:param kwargs:
+	"""
+
 	# From CPython
 	# PSF Licensed
 	# Copyright Python Software Foundation

@@ -139,7 +139,7 @@ def iter_installed_repos(
 			return context_switcher.client.session.get(  # type: ignore
 				installation.repositories_url,
 				params={"per_page": 100, "page": page},
-				headers=headers,
+				headers=headers,  # pylint: disable=cell-var-from-loop
 				).json()
 
 		response = get_page()
