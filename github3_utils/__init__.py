@@ -50,6 +50,7 @@ Handy utilities for `github3.py <https://github3py.readthedocs.io/en/master/>`_.
 #  |  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
 #  |  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 #  |  POSSIBILITY OF SUCH DAMAGE.
+#
 
 # stdlib
 import datetime
@@ -143,7 +144,8 @@ def protect_branch(branch: Branch, status_checks: Optional[List[str]] = None) ->
 	:param branch: The branch to enable protection for.
 	:param status_checks: A list of strings naming status checks which must pass before merging.
 		Use :py:obj:`None` or omit to use the already associated value.
-	:returns: :py:obj:`True` if successful, :py:obj:`False` otherwise
+
+	:returns: :py:obj:`True` if successful, :py:obj:`False` otherwise.
 	"""
 
 	previous_values = None
@@ -193,7 +195,7 @@ class Impersonate:
 
 	**Example:**
 
-	.. code-block::
+	.. code-block:: python
 
 		name = "repo-helper[bot]"
 		email = f"74742576+{name}@users.noreply.github.com"
@@ -205,7 +207,10 @@ class Impersonate:
 
 	"""
 
+	#: The name of the committer.
 	name: str = attr.ib()
+
+	#: The email address of the committer.
 	email: str = attr.ib()
 
 	@contextmanager

@@ -124,6 +124,9 @@ Installation
 
 .. end installation
 
+Contents
+-------------
+
 .. toctree::
 	:hidden:
 
@@ -134,6 +137,7 @@ Installation
 	:caption: API Reference
 	:glob:
 
+	api/github3-utils.rst
 	api/*
 
 .. toctree::

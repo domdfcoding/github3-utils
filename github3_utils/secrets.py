@@ -35,6 +35,7 @@ from apeye import URL
 from github3.repos import Repository  # type: ignore
 from nacl import encoding, public  # type: ignore
 from requests import Response
+from typing_extensions import TypedDict
 
 __all__ = [
 		"build_secrets_url",
@@ -42,6 +43,7 @@ __all__ = [
 		"get_public_key",
 		"get_secrets",
 		"set_secret",
+		"PublicKey",
 		]
 
 
@@ -49,17 +51,24 @@ def build_secrets_url(repo: Repository) -> URL:
 	"""
 	Returns the URL via which secrets can be checked and set.
 
-	:param repo:
+	:param repo: The repository to check/set secrets for.
 	"""
 
 	return URL(repo._build_url("actions/secrets", base_url=repo._api))
 
 
-def get_public_key(repo: Repository) -> Dict[str, str]:
+_keys = {"ETag": str, "Last-Modified": str, "key": str, "key_id": str}
+PublicKey = TypedDict("PublicKey", _keys, total=False)
+PublicKey.__doc__ = """
+:class:`typing.TypedDict` representing the return type of :func:`~.get_public_key`.
+"""
+
+
+def get_public_key(repo: Repository) -> PublicKey:
 	"""
 	Returns the public key used to encrypt secrets for the given repository.
 
-	:param repo:
+	:param repo: The repository the secrets are to be set for.
 	"""
 
 	response = repo._get(str(build_secrets_url(repo) / "public-key"), headers=repo.PREVIEW_HEADERS)
@@ -88,8 +97,11 @@ def encrypt_secret(public_key: str, secret_value: str) -> str:
 	:param public_key:
 	:param secret_value:
 
-	If the key has been obtained with :func:`~.get_secrets` when ``public_key`` will be
-	``get_secrets(repo)['key']``.
+	If the key has been obtained with :func:`~.get_secrets` then ``public_key`` will be:
+
+	.. code-block:: python
+
+		get_secrets(repo)['key']
 	"""
 
 	public_key = public.PublicKey(public_key.encode("utf-8"), encoding.Base64Encoder())

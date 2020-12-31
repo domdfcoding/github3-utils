@@ -84,11 +84,7 @@ class ContextSwitcher:
 				owner=owner,
 				repository=repository,
 				).id
-		self.client.login_as_app_installation(
-				self.private_key_pem,
-				self.app_id,
-				installation_id,
-				)
+		self.client.login_as_app_installation(self.private_key_pem, self.app_id, installation_id)
 
 		return installation_id
 

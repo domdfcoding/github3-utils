@@ -24,3 +24,12 @@ classifiers:
  - 'Development Status :: 4 - Beta'
  - 'Intended Audience :: Developers'
  - 'Topic :: Software Development :: Libraries :: Python Modules'
+
+sphinx_html_theme: furo
+
+extra_sphinx_extensions:
+  - attr_utils.autoattrs
+  - attr_utils.annotations
+
+intersphinx_mapping:
+ - '"github3": ("https://github3py.readthedocs.io/en/master/", None)'

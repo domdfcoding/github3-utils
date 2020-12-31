@@ -46,6 +46,8 @@ extensions = [
 		"sphinxcontrib.default_values",
 		"sphinxcontrib.toctree_plus",
 		"seed_intersphinx_mapping",
+		"attr_utils.autoattrs",
+		"attr_utils.annotations",
 		]
 
 sphinxemoji_style = "twemoji"
@@ -62,20 +64,26 @@ pygments_style = "default"
 intersphinx_mapping = {
 		"python": ("https://docs.python.org/3/", None),
 		"sphinx": ("https://www.sphinx-doc.org/en/stable/", None),
+		"github3": ("https://github3py.readthedocs.io/en/master/", None),
 		}
 
-html_theme = "domdf_sphinx_theme"
-html_theme_options = {"logo_only": False}
+html_theme = "furo"
+html_theme_options = {
+		"light_css_variables": {
+				"toc-title-font-size": "12pt",
+				"toc-font-size": "12pt",
+				"admonition-font-size": "12pt",
+				},
+		"dark_css_variables": {
+				"toc-title-font-size": "12pt",
+				"toc-font-size": "12pt",
+				"admonition-font-size": "12pt",
+				},
+		}
 html_theme_path = ["../.."]
 html_show_sourcelink = True  # True will show link to source
 
-html_context = {
-		"display_github": True,
-		"github_user": "domdfcoding",
-		"github_repo": "github3-utils",
-		"github_version": "master",
-		"conf_py_path": "/doc-source/",
-		}
+html_context = {}
 htmlhelp_basename = slug
 
 latex_documents = [("index", f'{slug}.tex', project, author, "manual")]
