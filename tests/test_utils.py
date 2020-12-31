@@ -12,13 +12,11 @@ from pytest_regressions.data_regression import DataRegressionFixture
 from github3_utils import Impersonate, get_user
 
 
-def test_get_user(data_regression: DataRegressionFixture):
-	github = GitHub(token="FAKE_TOKEN")
-
-	with Betamax(github.session) as vcr:
+def test_get_user(data_regression: DataRegressionFixture, github_client):
+	with Betamax(github_client.session) as vcr:
 		vcr.use_cassette("test_get_user", record="once")
 
-		data_regression.check(get_user(github).as_dict())
+		data_regression.check(get_user(github_client).as_dict())
 
 
 def test_get_user_no_auth(data_regression: DataRegressionFixture):
