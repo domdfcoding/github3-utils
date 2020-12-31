@@ -49,7 +49,7 @@ def test_iter_installed_repos(data_regression: DataRegressionFixture):
 		data_regression.check(repo_names)
 
 
-def test_test_iter_installed_repos():
+def test_iter_installed_repos_errors():
 
 	error_msg = "Either 'context_switcher' or all of 'client', 'private_key_pem' and 'app_id' must be provided."
 
