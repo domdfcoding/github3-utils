@@ -2,7 +2,7 @@
 #
 #  __init__.py
 """
-Handy utilities for github3.py
+Handy utilities for `github3.py <https://github3py.readthedocs.io/en/master/>`_.
 """
 #
 #  Copyright © 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>

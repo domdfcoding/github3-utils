@@ -26,6 +26,9 @@ def test_rate_limit_exceeded(capsys, file_regression):
 	with Betamax(github.session) as vcr:
 		vcr.use_cassette("rate_limit_exceeded", record="once")
 
-		with pytest.raises(RateLimitExceeded, match="No requests available! Resets at 2020-12-31 00:04:05"):
+		with pytest.raises(  # noqa: PT012
+			RateLimitExceeded,
+			match="No requests available! Resets at 2020-12-31 00:04:05",
+			):
 			with echo_rate_limit(github):
 				pass
