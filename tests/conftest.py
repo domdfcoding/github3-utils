@@ -13,3 +13,11 @@ pytest_plugins = ("domdf_python_tools.testing", )
 @pytest.fixture()
 def github_client() -> GitHub:
 	return GitHub(token="FAKE_TOKEN")  # nosec: B106
+
+
+@pytest.fixture()
+def cassette(request, github_client):
+	with Betamax(github_client.session) as vcr:
+		vcr.use_cassette(request.node.name, record="none")
+
+		yield github_client
