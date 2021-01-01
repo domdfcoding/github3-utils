@@ -28,8 +28,19 @@ classifiers:
 sphinx_html_theme: furo
 
 extra_sphinx_extensions:
-  - attr_utils.autoattrs
-  - attr_utils.annotations
+ - attr_utils.autoattrs
+ - attr_utils.annotations
+ - sphinx_autofixture
 
 intersphinx_mapping:
  - '"github3": ("https://github3py.readthedocs.io/en/master/", None)'
+
+extras_require:
+ testing:
+  - pytest>=6.0.0
+  - betamax>=0.8.1
+
+tox_testenv_extras: all
+
+sphinx_conf_epilogue:
+ - toctree_plus_types.add("fixture")
