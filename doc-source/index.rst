@@ -100,7 +100,7 @@ github3-utils
 	:last-commit:
 	:alt: GitHub last commit
 
-.. |maintained| maintained-shield:: 2020
+.. |maintained| maintained-shield:: 2021
 	:alt: Maintenance
 
 .. |pypi-downloads| pypi-shield::
