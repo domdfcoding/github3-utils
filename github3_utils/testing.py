@@ -42,15 +42,11 @@ To use this module you need to add, at a minimum, the following to your ``confte
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-# stdlib
-from typing import Callable
-
 # 3rd party
-import click
 import pytest  # nodep
 from _pytest.fixtures import FixtureRequest  # nodep
-from betamax import Betamax  # nodep
-from github3 import GitHub
+from betamax import Betamax  # type: ignore  # nodep
+from github3 import GitHub  # type: ignore
 
 __all__ = ["cassette", "github_client", "module_cassette"]
 
