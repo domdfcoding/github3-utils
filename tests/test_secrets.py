@@ -1,22 +1,12 @@
 # 3rd party
-import pytest
 from apeye import URL
-from betamax import Betamax  # type: ignore
 from pytest_regressions.data_regression import DataRegressionFixture
 
 # this package
 from github3_utils.secrets import build_secrets_url, encrypt_secret, get_public_key, get_secrets, set_secret
 
 
-@pytest.fixture()
-def secrets_test_cassette(github_client):
-	with Betamax(github_client.session) as vcr:
-		vcr.use_cassette("test_secrets", record="none")
-
-		yield github_client
-
-
-def test_build_secrets_url(github_client, secrets_test_cassette):
+def test_build_secrets_url(github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 	secrets_url = build_secrets_url(repo)
 
@@ -24,7 +14,7 @@ def test_build_secrets_url(github_client, secrets_test_cassette):
 	assert secrets_url == URL("https://api.github.com/repos/domdfcoding/repo_helper_demo/actions/secrets")
 
 
-def test_get_public_key(data_regression: DataRegressionFixture, github_client, secrets_test_cassette):
+def test_get_public_key(data_regression: DataRegressionFixture, github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 	data_regression.check(get_public_key(repo))
 
@@ -34,7 +24,7 @@ def test_get_secrets(data_regression: DataRegressionFixture, github_client, cass
 	data_regression.check(get_secrets(repo))
 
 
-def test_encrypt_secret(data_regression: DataRegressionFixture, github_client, secrets_test_cassette):
+def test_encrypt_secret(data_regression: DataRegressionFixture, github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 
 	public_key = get_public_key(repo)
@@ -44,7 +34,7 @@ def test_encrypt_secret(data_regression: DataRegressionFixture, github_client, s
 	assert len(secret) == 80
 
 
-def test_set_secret(data_regression: DataRegressionFixture, github_client, secrets_test_cassette):
+def test_set_secret(data_regression: DataRegressionFixture, github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 
 	public_key = get_public_key(repo)

@@ -60,8 +60,8 @@ from typing import List, Optional
 
 # 3rd party
 import attr
-import click
 from apeye import URL
+from click import echo
 from github3 import GitHub, users  # type: ignore
 from github3.repos.branch import Branch  # type: ignore
 
@@ -112,7 +112,7 @@ def echo_rate_limit(github: GitHub, verbose: bool = True):
 		raise RateLimitExceeded(reset)
 
 	if verbose:
-		click.echo(f"{remaining_requests} requests available.")
+		echo(f"{remaining_requests} requests available.")
 
 	yield github
 
@@ -122,7 +122,7 @@ def echo_rate_limit(github: GitHub, verbose: bool = True):
 		used_requests = remaining_requests - new_remaining_requests
 		reset = datetime.datetime.fromtimestamp(rate["reset"])
 
-		click.echo(f"Used {used_requests} requests. {new_remaining_requests} remaining. Resets at {reset}")
+		echo(f"Used {used_requests} requests. {new_remaining_requests} remaining. Resets at {reset}")
 
 
 def get_user(github: GitHub) -> users.User:

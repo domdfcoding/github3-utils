@@ -81,10 +81,10 @@ def module_cassette(request: FixtureRequest, github_client):
 	which record and plays back interactions with the GitHub API.
 	"""  # noqa: D400
 
-	cassette_name = request.module.__name__
+	cassette_name = request.module.__name__.split('.')[-1]
 
 	with Betamax(github_client.session) as vcr:
-		vcr.use_cassette(cassette_name, record="none")
 		# print(f"Using cassette {cassette_name!r}")
+		vcr.use_cassette(cassette_name, record="none")
 
 		yield github_client

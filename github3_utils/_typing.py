@@ -3,17 +3,17 @@ import sys
 
 __all__ = ["make_typed_dict"]
 
-if sys.version_info > (3, 9):
+if sys.version_info > (3, 9):  # pragma: no cover (<py39)
 	# stdlib
 	from typing import TypedDict
 
 	make_typed_dict = TypedDict
 
-else:
+else:  # pragma: no cover (py39+)
 	# 3rd party
 	from typing_extensions import _TypedDictMeta
 
-	def make_typed_dict(typename, *args, total=True, **kwargs):
+	def make_typed_dict(typename, *args, total=True, **kwargs):  # pragma: no cover
 		"""
 		Create a TypedDict.
 
