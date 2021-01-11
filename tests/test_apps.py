@@ -1,12 +1,17 @@
+# stdlib
+from datetime import date
+
 # 3rd party
 import pytest
 from betamax import Betamax  # type: ignore
 from domdf_python_tools.stringlist import StringList
+from domdf_python_tools.testing import check_file_regression
 from github3 import GitHub  # type: ignore
 from pytest_regressions.data_regression import DataRegressionFixture
+from pytest_regressions.file_regression import FileRegressionFixture
 
 # this package
-from github3_utils.apps import iter_installed_repos
+from github3_utils.apps import iter_installed_repos, make_footer_links
 
 # This is a fake key generated from https://travistidwell.com/jsencrypt/demo/
 FAKE_KEY = StringList([
@@ -64,3 +69,44 @@ def test_iter_installed_repos_errors():
 
 	with pytest.raises(ValueError, match=error_msg):
 		next(iter_installed_repos(client=GitHub()))
+
+
+@pytest.mark.parametrize("event_date", [date(2020, 12, 25), date(2020, 7, 4), None])
+def test_make_footer_links_marketplace(file_regression: FileRegressionFixture, fixed_datetime, event_date):
+	footer = make_footer_links(
+			"domdfcoding",
+			"octocheese",
+			event_date=event_date,
+			type="marketplace",
+			docs_url="https://octocheese.readthedocs.io"
+			)
+
+	check_file_regression(footer, file_regression)
+
+	footer = make_footer_links(
+			"domdfcoding", "octocheese", event_date=event_date, docs_url="https://octocheese.readthedocs.io"
+			)
+
+	check_file_regression(footer, file_regression)
+
+
+@pytest.mark.parametrize("event_date", [date(2020, 12, 25), date(2020, 7, 4), None])
+def test_make_footer_links_app(file_regression: FileRegressionFixture, fixed_datetime, event_date):
+	footer = make_footer_links(
+			"domdfcoding",
+			"repo-helper-bot",
+			event_date=event_date,
+			type="app",
+			docs_url=None,
+			)
+
+	check_file_regression(footer, file_regression)
+
+	footer = make_footer_links(
+			"domdfcoding",
+			"repo-helper-bot",
+			event_date=event_date,
+			type="app",
+			)
+
+	check_file_regression(footer, file_regression)

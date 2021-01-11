@@ -27,14 +27,17 @@ Functions and classes for GitHub apps.
 #
 
 # stdlib
+from datetime import date
 from typing import Dict, Iterator, Optional
 
 # 3rd party
 import attr
+from domdf_python_tools.stringlist import DelimitedList
 from github3 import GitHub  # type: ignore
 from github3.apps import Installation  # type: ignore
+from typing_extensions import Literal
 
-__all__ = ["ContextSwitcher", "iter_installed_repos"]
+__all__ = ["ContextSwitcher", "iter_installed_repos", "make_footer_links"]
 
 
 @attr.s
@@ -154,3 +157,54 @@ def iter_installed_repos(
 			page += 1
 			yield from response["repositories"]
 			total_repos -= len(response["repositories"])
+
+
+_FooterType = Literal["marketplace", "app"]
+
+
+def make_footer_links(
+		owner: str,
+		name: str,
+		event_date: Optional[date] = None,
+		type: _FooterType = "marketplace",  # noqa: A002  # pylint: disable=redefined-builtin
+		docs_url: Optional[str] = None,
+		) -> str:
+	"""
+	Create markdown footer links for a GitHub app.
+
+	:param owner: The owner of the repository.
+	:param name: The name of the repository.
+	:param event_date: The date on which the footer is being created. Determines the emoji shown.
+	:default event_data: today
+	:param type: Whether the footer is for a GitHub app or an item in the marketplace.
+	:param docs_url: The URL of the app's documentation. If :py:obj:`None` no link will be shown.
+
+	.. versionadded:: 0.3.0
+	"""
+
+	if event_date is None:
+		event_date = date.today()
+
+	if event_date.month == 12 or (event_date.month == 1 and event_date.day <= 6):  # pragma: no cover
+		docs_emoji = '🎄'
+		repo_emoji = '☃'
+		issues_emoji = '🎅'
+		marketplace_emoji = '🎁'
+	else:  # pragma: no cover
+		docs_emoji = '📝'
+		repo_emoji = ":octocat:"
+		issues_emoji = '🙋'
+		marketplace_emoji = '🏪'
+
+	buf: DelimitedList[str] = DelimitedList()
+
+	if docs_url:
+		buf.append(f"[{docs_emoji} docs]({docs_url})")
+
+	buf.extend([
+			f"[{repo_emoji} repo](https://github.com/{owner}/{name})",
+			f"[{issues_emoji} issues](https://github.com/{owner}/{name}/issues)",
+			f"[{marketplace_emoji} marketplace](https://github.com/{type}/{name})",
+			])
+
+	return f"{buf: | }"
