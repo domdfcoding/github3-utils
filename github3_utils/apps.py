@@ -185,12 +185,12 @@ def make_footer_links(
 	if event_date is None:
 		event_date = date.today()
 
-	if event_date.month == 12 or (event_date.month == 1 and event_date.day <= 6):  # pragma: no cover
+	if event_date.month == 12 or (event_date.month == 1 and event_date.day <= 6):
 		docs_emoji = '🎄'
 		repo_emoji = '☃'
 		issues_emoji = '🎅'
 		marketplace_emoji = '🎁'
-	else:  # pragma: no cover
+	else:
 		docs_emoji = '📝'
 		repo_emoji = ":octocat:"
 		issues_emoji = '🙋'
