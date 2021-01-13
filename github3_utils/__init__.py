@@ -65,6 +65,9 @@ from click import echo
 from github3 import GitHub, users  # type: ignore
 from github3.repos.branch import Branch  # type: ignore
 
+# this package
+from github3_utils.headers import LUKE_CAKE
+
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
 __license__: str = "MIT License"
@@ -170,7 +173,7 @@ def protect_branch(branch: Branch, status_checks: Optional[List[str]] = None) ->
 	resp = branch._put(
 			str(URL(branch._api) / "protection"),
 			json=edit,
-			headers={"Accept": "application/vnd.github.luke-cage-preview+json"},
+			headers=LUKE_CAKE,
 			)
 
 	if branch._boolean(resp, 200, 404):

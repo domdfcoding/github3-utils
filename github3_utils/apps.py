@@ -37,6 +37,9 @@ from github3 import GitHub  # type: ignore
 from github3.apps import Installation  # type: ignore
 from typing_extensions import Literal
 
+# this package
+from github3_utils.headers import MACHINE_MAN
+
 __all__ = ["ContextSwitcher", "iter_installed_repos", "make_footer_links"]
 
 
@@ -133,10 +136,7 @@ def iter_installed_repos(
 
 		# Get repositories for this user.
 
-		headers = {
-				**installation.session.headers,
-				"Accept": "application/vnd.github.machine-man-preview+json",
-				}
+		headers = {**installation.session.headers, **MACHINE_MAN}
 
 		def get_page(page: int = 1):
 			return context_switcher.client.session.get(  # type: ignore
