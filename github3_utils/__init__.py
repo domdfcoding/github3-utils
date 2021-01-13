@@ -173,7 +173,11 @@ def protect_branch(branch: Branch, status_checks: Optional[List[str]] = None) ->
 			headers={"Accept": "application/vnd.github.luke-cage-preview+json"},
 			)
 
-	return branch._boolean(resp, 200, 404)
+	if branch._boolean(resp, 200, 404):
+		branch.protected = True
+		return True
+	else:  # pragma: no cover
+		return False
 
 
 @attr.s
