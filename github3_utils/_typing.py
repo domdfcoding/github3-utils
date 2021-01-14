@@ -29,9 +29,6 @@ else:  # pragma: no cover (py39+)
 		# PSF Licensed
 		# Copyright Python Software Foundation
 
-		if not args:
-			raise TypeError("TypedDict.__new__(): not enough arguments")
-
 		if args:
 			try:
 				fields, = args  # allow the "_fields" keyword be passed
@@ -40,7 +37,7 @@ else:  # pragma: no cover (py39+)
 						f'TypedDict.__new__() takes from 2 to 3 positional arguments but {len(args) + 2} were given'
 						)
 		else:
-			fields = None
+			raise TypeError("TypedDict.__new__(): not enough arguments")
 
 		if fields is None:
 			fields = kwargs
