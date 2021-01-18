@@ -1,0 +1,634 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/domdfcoding/repo_helper_demo"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA62YUW/bNhDHv4tfl0Z24g6pgaIN0GHYgGTYkA3FXgRaoiU2kqiRlI1YyHfv/0jKkrw0liO9JDLF+/F0vDser56JeLa6vp7fzOfLxdXFrJAxD2lsdvfll90f2e9Z9OuHPfv61zYqHvd3+9vl3Zfb+d3Dbx9nmMxyjpmKlzJMeVZyFcY8l3izqbIs9K9jmcebSMaiSIIXppZKbJkBZ8MyzS9mcldwNVvVs0wmogC+Iw8y6XYzfz+/eX/d1/bPn//5ep9F35Ld/cPt8v7hjjRkQDMVVioDKDWm1KsgcIN6cZkIk1brSnMVycLwwlxGMg+qwPM/bT8uwUiUp1izYOCIVgoPctKg6aCvc2ry7EgHt7SV6M/dyCyTOzCOlT6xTHAQJPNbCAz+NggE60CaFPtJxnkmIwhtzlbJCtUB/YNPEUZjNxSPz1XLi0Epco7n2vqR5VVrHSlRGiGLs9XrCQMmVcIKsWdvgkFYg0GKna2IFYIw38IHz5Z2UnVgAyl6IrMoHnGxhZ3fRjwSB9A8lRTpf8MbyOrC8JDFOYWnjdrnCwTXQB9/KQfE/LCLs1WB3EEurB4POeHViLPW60bRSysQ7oRlT3MQY6DAAI/8aTyMIHWAvz42IgQtW0vFjDwV/QNU7dHqoPuTPMRwlo//BEsBLZVyAutaCmhC64oPct0BdrAwHTRBUlT52mW0IaExgO8w0JppLZKC8/FWPZDqoEm/a8WKKJ2A3YDqwD1ZX2DJeKUJAtY6k+vxMJyOgSXVgU6ZO39MOImehCZQj6z4ZhqlCXQgGzWFN1iFiXTg4jQ0cIzxGjegoPZWzliRVCyZAH0g0XGBQz9h+5M1zYBoa1HgUtGmxLqaKF+2MNLZFRbIFROYuWW1ZFuyvF4HDbFHp/6xFslzcaqCGID1nF6MTMUmfz7m0+/Tpc9AxQlUB22id8eJX2K0xf150mjcXchfIsY7TAMK6p9KZlLKf1ivZIqPVt9zgnrNULZdXl7WKWe2NM+5miLwHQY8pqIUNehojesGhOIrZ8YW/xtSOMZlIJMsHm/vAwlUt7+jtXaYrneUKGvHq2opXWwuMq6NLCbI2S2qu0AhjdiIaMitaECA9mj1Jy2KiF8wFPzwbiMiAX/H7ZO2F7Uwn8BgDoMPQq/CXY0yDtcfvxOKO1AduKttzMtMPk2Txjosin3F0SCJQ2ZwBbuaXy3ezRfvFjcPV1erxYfVcvEv5lRlfHJOWen0x5glYZCcvevjCa2Sl9sU/7tgUQME0lqnrfTnVnb1WgvIy0YZfPgo7M5cfXt8ng6Uh+apzHmJwqe5fWqxx/O8V7tEsiqwAxjcMYNiHJVBO9TUOw0gZTp0OWC2MqpCX4tGSiW/8cjo7libfDoTd+JR9ASpKDtch91ltl08F0pJ3+Vyt2efM9Gw8l21WGi2zng7IEteeA27nyEiXuiDGdx9lz65M71nAvsj5htWZSZ0Vwo4ac60sZ0CtARzmIG6M9TS8z0DZxByx+YbKa25Z7QSDM/L0PmDkY+ceoBAIUnIXaj/qxi8zJ4yjbB7Y4fwKVQB9d8oToddXyZG9KKJ4TQOUYl5ojdXwc0Od/2OZboFobf84vk7UX42pT8VAAA="
+        },
+        "headers": {
+          "Date": [
+            "Mon, 18 Jan 2021 22:24:17 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"264b5cdcf00a4627cf9c313b4562b83cce679585889e59ffd2cea966e03e05a0\""
+          ],
+          "last-modified": [
+            "Mon, 18 Jan 2021 22:19:41 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:org, repo, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4843"
+          ],
+          "X-RateLimit-Reset": [
+            "1611009354"
+          ],
+          "x-ratelimit-used": [
+            "157"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "AE84:F5A2:65DFFD7:76EBF62:60060A91"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/domdfcoding/repo_helper_demo"
+      },
+      "recorded_at": "2021-01-18T22:24:17"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.symmetra-preview+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels?per_page=100"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA63V3W/aMBAA8H/FijTtBZXwlVDekEarPZSXdZq2aUImvhB3iZ3Z54Z26v9e2yWEj6rhIbwgn6MLP86++/0/4CyYDaNoOgrDKJz0AiEZrFwwuPvyPbq/veG/flRPy4ef47vnebV8mA+CXmBUbh/IEEs96/dpya82HDOzvkpk0VdQSt1nsmBpIhkXGx9ZZZCXoFYMCtnP6Rpy3V+bjU0maAE229sikblUdsXiER1Tu8sgpSbHYIbKgFvqRPESuRT2qW+yAMzsKwjX4jOSSqq/dhW89E5g0QWwYXcwJhNTgEDqf+eeeBqusWEYT5JW7NeiVPIRXF5NpCKUMe7ya4KSHKc+88cX+Ecd+k2Z84QiHNgPQrU7SdmIxW1Fvs+4tvXVBpy6NHlOFPwzoJHQXAFlTwS2XKM+L/v0Ava4OzaIjIrEV6iBHwdrOh0CQNpGX0JFUqBolLfv2GfOQdjuXFTdOTdSsk/DMOVKo/32tWnAbpf4vbeq2Z1aHYeTOG1V3/oE1iugsg0F1DuVvW4XzyfdiV3zstKKCgTWUF2Y7IPNdZ5GsesmH/auxRYVJRTRnhZ7i+1/Zb3AbPrT2zsYtGMX2+6wXDzS3I6Afd9qAjURxhBF121Ef3OZBN+bNUBBFN9keA4cXgB86g7om8dRZz6I7CfQNI7A9cQPq3hjFGagCBf2wBa+37tK7m7qe8UcXWB97s5aSYEpd6djN2ebQC1N/adN6otZcdt9hUSyBj9sgRE74F7+vAId0/Z4SQgAAA=="
+        },
+        "headers": {
+          "Date": [
+            "Mon, 18 Jan 2021 22:24:17 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"f4eb00d7490e6309d6370aee84ecbaeac05ad828798d293af1223e99cd543d12\""
+          ],
+          "X-OAuth-Scopes": [
+            "read:org, repo, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=symmetra-preview; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4842"
+          ],
+          "X-RateLimit-Reset": [
+            "1611009354"
+          ],
+          "x-ratelimit-used": [
+            "158"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "AE84:F5A2:65E000F:76EBF9A:60060A91"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels?per_page=100"
+      },
+      "recorded_at": "2021-01-18T22:24:17"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"name\": \"failure: flake8\", \"color\": \"B60205\", \"description\": \"The Flake8 check is failing.\"}"
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.symmetra-preview+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Content-Length": [
+            "93"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"id\":2668307431,\"node_id\":\"MDU6TGFiZWwyNjY4MzA3NDMx\",\"url\":\"https://api.github.com/repos/domdfcoding/repo_helper_demo/labels/failure:%20flake8\",\"name\":\"failure: flake8\",\"color\":\"B60205\",\"default\":false,\"description\":\"The Flake8 check is failing.\"}"
+        },
+        "headers": {
+          "Date": [
+            "Mon, 18 Jan 2021 22:24:17 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Content-Length": [
+            "248"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "201 Created"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "\"2c7a121492d94c5b07ac934a38571eb953d4ea8d3856b51a670a334bee46397a\""
+          ],
+          "X-OAuth-Scopes": [
+            "read:org, repo, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "Location": [
+            "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels/failure:%20flake8"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=symmetra-preview; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4841"
+          ],
+          "X-RateLimit-Reset": [
+            "1611009354"
+          ],
+          "x-ratelimit-used": [
+            "159"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "X-GitHub-Request-Id": [
+            "AE84:F5A2:65E004F:76EBFE2:60060A91"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels"
+      },
+      "recorded_at": "2021-01-18T22:24:17"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/domdfcoding/repo_helper_demo"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA62YUW/bNhDHv4tfl0Z24g6pgaIN0GHYgGTYkA3FXgRaoiU2kqiRlI1YyHfv/0jKkrw0liO9JDLF+/F0vDser56JeLa6vp7fzOfLxdXFrJAxD2lsdvfll90f2e9Z9OuHPfv61zYqHvd3+9vl3Zfb+d3Dbx9nmMxyjpmKlzJMeVZyFcY8l3izqbIs9K9jmcebSMaiSIIXppZKbJkBZ8MyzS9mcldwNVvVs0wmogC+Iw8y6XYzfz+/eX/d1/bPn//5ep9F35Ld/cPt8v7hjjRkQDMVVioDKDWm1KsgcIN6cZkIk1brSnMVycLwwlxGMg+qwPM/bT8uwUiUp1izYOCIVgoPctKg6aCvc2ry7EgHt7SV6M/dyCyTOzCOlT6xTHAQJPNbCAz+NggE60CaFPtJxnkmIwhtzlbJCtUB/YNPEUZjNxSPz1XLi0Epco7n2vqR5VVrHSlRGiGLs9XrCQMmVcIKsWdvgkFYg0GKna2IFYIw38IHz5Z2UnVgAyl6IrMoHnGxhZ3fRjwSB9A8lRTpf8MbyOrC8JDFOYWnjdrnCwTXQB9/KQfE/LCLs1WB3EEurB4POeHViLPW60bRSysQ7oRlT3MQY6DAAI/8aTyMIHWAvz42IgQtW0vFjDwV/QNU7dHqoPuTPMRwlo//BEsBLZVyAutaCmhC64oPct0BdrAwHTRBUlT52mW0IaExgO8w0JppLZKC8/FWPZDqoEm/a8WKKJ2A3YDqwD1ZX2DJeKUJAtY6k+vxMJyOgSXVgU6ZO39MOImehCZQj6z4ZhqlCXQgGzWFN1iFiXTg4jQ0cIzxGjegoPZWzliRVCyZAH0g0XGBQz9h+5M1zYBoa1HgUtGmxLqaKF+2MNLZFRbIFROYuWW1ZFuyvF4HDbFHp/6xFslzcaqCGID1nF6MTMUmfz7m0+/Tpc9AxQlUB22id8eJX2K0xf150mjcXchfIsY7TAMK6p9KZlLKf1ivZIqPVt9zgnrNULZdXl7WKWe2NM+5miLwHQY8pqIUNehojesGhOIrZ8YW/xtSOMZlIJMsHm/vAwlUt7+jtXaYrneUKGvHq2opXWwuMq6NLCbI2S2qu0AhjdiIaMitaECA9mj1Jy2KiF8wFPzwbiMiAX/H7ZO2F7Uwn8BgDoMPQq/CXY0yDtcfvxOKO1AduKttzMtMPk2Txjosin3F0SCJQ2ZwBbuaXy3ezRfvFjcPV1erxYfVcvEv5lRlfHJOWen0x5glYZCcvevjCa2Sl9sU/7tgUQME0lqnrfTnVnb1WgvIy0YZfPgo7M5cfXt8ng6Uh+apzHmJwqe5fWqxx/O8V7tEsiqwAxjcMYNiHJVBO9TUOw0gZTp0OWC2MqpCX4tGSiW/8cjo7libfDoTd+JR9ASpKDtch91ltl08F0pJ3+Vyt2efM9Gw8l21WGi2zng7IEteeA27nyEiXuiDGdx9lz65M71nAvsj5htWZSZ0Vwo4ac60sZ0CtARzmIG6M9TS8z0DZxByx+YbKa25Z7QSDM/L0PmDkY+ceoBAIUnIXaj/qxi8zJ4yjbB7Y4fwKVQB9d8oToddXyZG9KKJ4TQOUYl5ojdXwc0Od/2OZboFobf84vk7UX42pT8VAAA="
+        },
+        "headers": {
+          "Date": [
+            "Mon, 18 Jan 2021 22:24:17 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"264b5cdcf00a4627cf9c313b4562b83cce679585889e59ffd2cea966e03e05a0\""
+          ],
+          "last-modified": [
+            "Mon, 18 Jan 2021 22:19:41 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:org, repo, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4840"
+          ],
+          "X-RateLimit-Reset": [
+            "1611009354"
+          ],
+          "x-ratelimit-used": [
+            "160"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "AE84:F5A2:65E00A3:76EC041:60060A91"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/domdfcoding/repo_helper_demo"
+      },
+      "recorded_at": "2021-01-18T22:24:17"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.symmetra-preview+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels?per_page=100"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA62WUW/aMBSF/4oVadpLBYFAQnnr1FLtAV7WadqmqTLxDXFx7Mx2mrZT//uu3YZQqBoewgvyudElH+fm3Pz+F3AWzMdxPIvCMA6nZ4FUDG6dGCwvv8c31wv+60f9uLr7OVk+XdSru4tRcBZUWuAFubWlmQ+HtOSDDbd5tR6kqhhqKJUZMlWwLFWMy41XbnMQJehbBoUaCroGYYbraoPNJC0Au70cUiWUxhNLIjqhWGWQ0UrYYG51Be5oUs1Ly5XEq76pAmyOP0G4kZ8tqZXe4il4PjsAi08AG/cHxlRaFSAt9fe5QzyUG9gwTKZpJ+zXotTqHlxfQ5QmlDHu+htiFXnb+og/OYE/6pG/KgVPqYU99j2p4U4zFrGky+SbnBv011TgqMtKCKLhbwXGEio0UPZI4IEba45tn52APekPG2ROZeodasHfig06HQNA1oW+gppkQG2lPfsr9gFnMolGHZzR6nL50B9nRrnAW5p/GoeZoFuYtbRNiewKDfGXOByH033ijApz9Ejf5EAWvilJc0i36DxxTfGxHhwZPAo7wDGwrur+wDdKMQfNtbH47YeyZXdV4msv44qVBj4Jp0nWafe1b4BGS6gxSUG/M9Ln3cQX7l/uKaJdaiNpTaUF1qI6mezENsdmceJi9MPQvnqwmhJqLT4mGF/OYAnAsP1hbI265trZ2+Ncc3lPBe6+XWC3QoMIE4jj8y5EH1lMgV9KBqAgmm9yeww47nbz6rE/N31qvllJe8pu9c6SGNwy+NDFRaVtDppwiQNb+EXnnHyNqPfMjE5gfeqPtVbSZtxNx+sLRis0pJn/dJF6M2uOa0cqS9bg3zKAEdzsz3/+A0w9MVlCCQAA"
+        },
+        "headers": {
+          "Date": [
+            "Mon, 18 Jan 2021 22:24:18 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"250f964873343e661ac16b2165b0850ddb5a11b36be4f1f50a86b9c95284a043\""
+          ],
+          "X-OAuth-Scopes": [
+            "read:org, repo, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=symmetra-preview; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4839"
+          ],
+          "X-RateLimit-Reset": [
+            "1611009354"
+          ],
+          "x-ratelimit-used": [
+            "161"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "AE84:F5A2:65E00EA:76EC090:60060A91"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/domdfcoding/repo_helper_demo/labels?per_page=100"
+      },
+      "recorded_at": "2021-01-18T22:24:18"
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
