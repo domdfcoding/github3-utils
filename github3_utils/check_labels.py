@@ -33,9 +33,9 @@ from typing import Dict, List
 
 # 3rd party
 import attr
-import github3.issues.label
+import github3.issues.label  # type: ignore
 from domdf_python_tools.doctools import prettify_docstrings
-from github3.repos import Repository
+from github3.repos import Repository  # type: ignore
 
 __all__ = ["Label", "check_status_labels"]
 
