@@ -29,22 +29,26 @@ Helpers for creating labels to mark pull requests with which tests are failing.
 #
 
 # stdlib
-from typing import Dict, List
+from typing import Dict, NamedTuple, Set, Union
 
 # 3rd party
 import attr
 import github3.issues.label  # type: ignore
 from domdf_python_tools.doctools import prettify_docstrings
+from github3.checks import CheckRun  # type: ignore
+from github3.issues import Issue  # type: ignore
+from github3.pulls import PullRequest, ShortPullRequest
 from github3.repos import Repository  # type: ignore
+from github3.repos.commit import ShortCommit  # type: ignore
 
-__all__ = ["Label", "check_status_labels"]
+__all__ = ["Label", "check_status_labels", "Checks", "get_checks_for_pr", "label_pr_failures"]
 
 
 @prettify_docstrings
-@attr.s
+@attr.s(frozen=True, slots=True)
 class Label:
 	"""
-	Represents a issue or pull request label.
+	Represents an issue or pull request label.
 	"""
 
 	#: The text of the label.
@@ -80,16 +84,116 @@ class Label:
 		return repo.create_label(**self.to_dict())
 
 
-check_status_labels: List[Label] = [
-		Label("failure: flake8", "#B60205", "The Flake8 check is failing."),
-		Label("failure: mypy", "#DC1C13", "The mypy check is failing."),
-		Label("failure: docs", "#EA4C46", "The docs check is failing."),
-		Label("failure: Windows", "#F07470", "The Windows tests are failing."),
-		Label("failure: Linux", "#F6BDC0", "The Linux tests are failing."),
-		Label("failure: Multiple", "#D93F0B", "Multiple checks are failing."),
-		]
+check_status_labels: Dict[str, Label] = {
+		label.name: label
+		for label in [
+				Label("failure: flake8", "#B60205", "The Flake8 check is failing."),
+				Label("failure: mypy", "#DC1C13", "The mypy check is failing."),
+				Label("failure: docs", "#EA4C46", "The docs check is failing."),
+				Label("failure: Windows", "#F07470", "The Windows tests are failing."),
+				Label("failure: Linux", "#F6BDC0", "The Linux tests are failing."),
+				# Label("failure: Multiple", "#D93F0B", "Multiple checks are failing."),
+				]
+		}
 """
-List of labels corresponding to failing pull request checks.
+Labels corresponding to failing pull request checks.
 """
 
-# Multiple is used if three or more categories failing
+# The ``failure: Multiple`` label is used if three or more categories failing.
+
+
+class Checks(NamedTuple):
+	"""
+	Represents the sets of status checks returned by :func:`~.get_checks_for_pr`.
+	"""
+
+	successful: Set[str]
+	failing: Set[str]
+	running: Set[str]
+	skipped: Set[str]
+	neutral: Set[str]
+
+
+def get_checks_for_pr(pull: Union[PullRequest, ShortPullRequest]) -> Checks:
+	"""
+	Returns a :class:`~.Checks` object containing sets of check names grouped by their status.
+
+	:param pull: The pull request to obtain checks for.
+	"""
+
+	head_commit: ShortCommit = list(pull.commits())[-1]
+
+	failing = set()
+	running = set()
+	successful = set()
+	skipped = set()
+	neutral = set()
+
+	check_run: CheckRun
+	for check_run in head_commit.check_runs():
+
+		if check_run.status in {"queued", "in_progress"}:
+			running.add(check_run.name)
+		elif check_run.conclusion in {"failure", "cancelled", "timed_out", "action_required"}:
+			failing.add(check_run.name)
+		elif check_run.conclusion == "success":
+			successful.add(check_run.name)
+		elif check_run.conclusion == "skipped":
+			skipped.add(check_run.name)
+		elif check_run.conclusion == "neutral":
+			neutral.add(check_run.name)
+
+	# Remove failing checks from successful etc. (as all checks appear twice for PRs)
+	successful = successful - failing - running
+	running = running - failing
+	skipped = skipped - running - failing - successful
+	neutral = neutral - running - failing - successful
+
+	return Checks(
+			successful=successful,
+			failing=failing,
+			running=running,
+			skipped=skipped,
+			neutral=neutral,
+			)
+
+
+def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
+	"""
+	Labels the given pull request to indicate which checks are failing.
+
+	:param pull:
+
+	:return: The new labels set for the pull request.
+	"""
+
+	pr_checks = get_checks_for_pr(pull)
+
+	failure_labels = set()
+	success_labels = set()
+
+	def determine_labels(from_, to):
+		for check in from_:
+			if check in {"Flake8", "docs"}:
+				to.add(check_status_labels[f"failure: {check.lower()}"])
+			elif check.startswith("mypy"):
+				to.add("failure: mypy")
+			elif check.startswith("ubuntu"):
+				to.add("failure: Linux")
+			elif check.startswith("windows"):
+				to.add("failure: Windows")
+
+	determine_labels(pr_checks.failing, failure_labels)
+	determine_labels(pr_checks.successful, success_labels)
+
+	issue: Issue = pull.issue()
+
+	current_labels = {label.name for label in issue.labels()}
+
+	# Only remove from current labels if in "success_labels"
+	current_labels.update(failure_labels)
+	current_labels -= success_labels
+
+	issue.add_labels(*current_labels)
+
+	return current_labels

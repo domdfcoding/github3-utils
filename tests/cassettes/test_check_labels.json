@@ -1,0 +1,891 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA+2Zy27jNhSGXyXwtonlS25jYDBdzDSYoml6MdBpNgYt0RYTSlRJyo4t5N378yJLdjMTjcFFF9kkDk1+PDzkOTz8U/VY0puMh+Or8fji6vy0l4uEzkxb7/bjp/Ud/5nHN++25Msfqzh/3N5Ob8e329vhr9vf3/fQmWQUPVWRsvzpjJRaLNiTLiXFd4uS89l+By0En4un6MX+hWQrooFbEK7oaU+scyp7k6rHxZLlzSweghmMlVcX19fjd5fDA8M3d4/vNvejn0rypUiTG76aP8TDu4/L7d307ycMJZiKyFkpOcCp1oWaRJFrVIP+kum0nJeKyljkmua6H4ssKqN6sg+r9+eALKXHWHeh4QBXME9yw4FT9dKbRaQ64wd2uOntIO+ppvtCcC7WIB3a/vpk0W6s2R3LYfnyaA7GVpHQKYUbsbRn4xCm9DGG2XFVZH7h6BmSwu5ImhxhnB8J08z5ea4iSQthkeVcxZIVmon8GCP3xoMn5JLkbEuO5WG8AsaYd4w5dhzG0xXO5zEAN7CKbNzFG+MiSWPKVnD70dADAph6U5gUcdfyltkMpumMJJkJbBvvz6cIw+6R8HIKSehuhzHlnzYrnZislIi4zOAnKk8WQp4UG02VPvG5SvVhEJofd6nnm3FsHX8QmC+bY5iv7ExHGEIXKJj5SDeBiIZURfjpIy5GQiBzIYkWryWXrkbvIauo/ac5bZqSLNBiLArIVIhQHrcoIJlSJe0UEF3dYokqquMvL7O5S59doq7rJI4F+4lSbJlTGsjTO1wV1Vl/Lkkep6EmqGlV5D7Zk0KWgcw3JADnXMwDEXFZRxZXRSol7hbUs3AWG76h7eElXQQ039B2eC2DnRVrusHt4LicNY5NINtrWlR5z3OSL0uyDMXf4XBiTFmxJNtXC6+u8dnwADdVpmRzXFThUm9DNNa72gd5JpTrG2CDt6XVt0u2zu5pFWvWQVnGXqtyurI9bC+ggk5gzv3hJObv1wu171mCoVVRc3u4i8rPE2YX/E1V296ezT+MAh2nmhZVPxREpyaLYtKCSBpmIR4WVXOCUrPf71cpJfahkVEZLF84FqBExinq6DC2VzUNNWBGtH3RLIzpCV44XJAk0B7scEC7jQ9jv2O1z04BZSCQ0RbVZmeMo7QXeag7oOG1Z8mFZgsWd3n7dQ3pPWT1QbE8pqeE81NEgWYxQ1zgxW32HWU6DeU/x8LSIOS4FyCnCJFAuyOpo1WRe9UntOBiEzAPtoAmZUgKASmZEY3X32gwGpwNh2fDq+loMBkNJ+PBPfqURbLXZ3g2QJ9r02dwPTkfmj5FqdIWpu4yvJyMLyaDS9MFKd5HBz5BOvqqZPPCy9CIQkAolTaIHxvAZF/z+Tog5jjmBzF6jB2rwzv7eyBYSCoyWqDqailp/xX4+tibBGIRXuKqz0RE84hjI5T1BNti8GgA9bFVZsWizLGRUPbWRON9gdKlaapLM8z520anIjd2EDVzyaY30bKEhGhaCikeaKxVu61Jda2Oa/bI9gaaQnInCbi3vDdggHuDSSm8gJgjCe2SPqRAL2AmTJE5p02DKGjuLayXMkI4s5jmCg6ozOseC0Klg9V45fT28/TkF98D7imSJy/Ofp6i0zeFCg9WkQe2hN34cnrDH+7/utjeTz9texBfnMAwwcpaVmJTGu/brUjogpRcz9zbzBhLFFQVmFJQmcH7RlwzS/HajtsHE1C1a03Gdp8xq6ZZMXPnWItHalReoJD1xHqm/ikJQsReqvVg941tggdNTbjztvtKUnPD7w9KkIWgNjmTZ6hQPbLWmdvK1JvcbIT8N7nZ/T+gg6b+Jjebf5x0cNT/Tm7OqV5DVa0zMTJf+5VcXzXP/wJ0AhlWIRsAAA=="
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:29 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"0a95e8c2f20253aa06db9f1906cd1ed60f7ed3b71e952e3e03bd3ea15daed757\""
+          ],
+          "last-modified": [
+            "Mon, 18 Jan 2021 20:08:41 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4999"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "1"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41EC4B:D32B30A:6006A45D"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture"
+      },
+      "recorded_at": "2021-01-19T09:20:29"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/pulls/10"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "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"
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:29 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"9ed5e8df98bb6e6a389837a0729af312f6d13e17fceaa16abf8b321a880bb7f5\""
+          ],
+          "last-modified": [
+            "Tue, 19 Jan 2021 09:10:33 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4998"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "2"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41ECB7:D32B37B:6006A45D"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/pulls/10"
+      },
+      "recorded_at": "2021-01-19T09:20:29"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/pulls/10/commits?per_page=100"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA61XaVPiTBD+KxRV+wkxJzms9X03yCGuCYIBJWJZk2QCE3KZi8Pyv+8MCAK766qYTzmmn+6Z7ufpzt1TMRmD4kmRoSWOFxwIOegIQJRoGzq2DaFl0jTvVCzIsg7HwkrxqBiENnxANjZSawOhw8qpeePR6qK+0BbqQtMtuu3Wp+2aSmu+4Rm65hmuMdYWo6nR7PtGs+sZNxpSawptuH3X0Ftzw1Xnht47xeBW6PsoLZ48FUGWjsOY3AXAh9hbFMPy6nPZQndmmN7j9dAHyMMfBUGqcAzDlX5f9SNLYJwcB2EMI29+PELpODOPMRI2t0FKoFmaZco0U2YknRFOuMoJzRvF53U0KdwOo4nS88zccv0C/OMjwD5MEjAiru9eAz620H3h9bGATyDMomWIR8U0hnj5Ol2yTHO26QAB0NCWcHoYjpF54HCiDEyTN20ZcBaEJMwsJuczTtMoOaEoEKGtE6DwkYQJlURjFMzKaRh6ZjhbPxL3DpqlWQwpvDeKRJBQ7/aMj+/LXK/SnlAfqFJiAoP0wQqzANcTfVTMYYwcZIEUhQE5ydUzxIWcxhk8KsYQJORLMQceLu+jYoJGASDbx+/K5KrWmy2tcNW8Kly3mpqi97r15fthMAymSdWqKkr1TFE61c7FqGoi/qxb/SmOXb6dc3Frqij2eaulnM1Qw841O27kPbczKPWUn9eXiT4MBmyjxCim5kqymwtqV1gYmT5l4maDv37sdPI4nkWmdBkbXqh3ookjl8RxqiNe8bsXN6NzZxi0WmNIxTE1U/TZ9ZSTL0vo0c9/9vwW32z1H8Vej8vq9HxGD+jOLZuZrCxPuRYzp27NKiN3LoYBzFDd0KPcl6/YR1m+UvKW1x+pj/pl6nDtxNNvPF27ZqbNbr877/fE6qDdhTORNSxamwp9fhh0uQbybxPEts8plBqZUumFFWkmwv7FZc21KmczXWEmEzSruPPahLm6tRvzSRzj3TKGceGpw4BteA2owfn8lhJZ6Db9CcznQqM/mt1UmMkZ6CljJ74YKJYondfa3UGDHTBRt20DtSmVOP50GJzS/fP+MFjmpq7V/pgxnN8IzL0QECEjpV14b2UPgwjEuLQKIicDi5FkHpoCywIeMCZbAU6FtWmTYURBEgHWTkEcBist2+L2WsEK3z8jXP8VGIGhZUkUab5QovE1DFYUwVJVWAlU4fvvuvQnu2HwPgV6/io+f4LL49T3HnbF5FVs36FeK5efUI9kz+sn1fOjW6ZexCvBRfraBr1whIg8/d7h8DLSj9eltNuiVaHjy7TmDnhNV2eqrpI2C3KQgnh/d8uXCfPSIEjbtMIgxaVOuiWFAkqQBJH9Pz/lMcQofgFZjgL/ajTLHkzthP6tUsVN/Fulhm3fzjCIoj1bbOKEnhdOMer+LnY73FuOqQ3GBg8Fo4PxMMYTFaZjiA8Yb/uZHBZK0kMCXdo/4TacpHj0IogJTlUM7QOCfUHAoU4DHOXTchhYQmdmYsUoIo3ykKB3cDBuGI9AgBbLBnwILsYhzFjOLgfsf2mPcWCOK/wQoBXAE65ulANrTo4whhZEOU7PweB7SBg7nUdkIqmGKckVSuEDsH2iDA7wErg/ta5VYwrNsoMJg20IYRlZEnieF3e1oiP0bzXPcuuVdm1Aa7UOh5e/pRXcX7Qio9YODlCLrZDf1oethR9ShbXd53VgD+EQ5m+gDuL6BuXr2P0Kua0Ln+HzBumjDN4YfpyzG9OvYelWJDsMf+VlD0v+X4i5mhuT4snd+j/uvSMkBvySn6n1JPIBv29T79+/ji/D17s9Pt8/3/8Cw0Dq8pcQAAA="
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:30 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"725aaea0d1f8352da9b2b9fc580243e589b192f50eaf9dc68a324181e21c0796\""
+          ],
+          "last-modified": [
+            "Tue, 19 Jan 2021 09:10:33 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4997"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "3"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41EDD7:D32B4DA:6006A45D"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/pulls/10/commits?per_page=100"
+      },
+      "recorded_at": "2021-01-19T09:20:30"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.antiope-preview+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/commits/108346fee3ef6a780defddeecb004f5ce22f32e5/check-runs?per_page=100"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "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"
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:31 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"71739fcdd43c2ef79bfea2373283414fec355d8a642f8ee5ce5ef4f9b2625270\""
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=antiope-preview; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4996"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "4"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41EE52:D32B572:6006A45E"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/commits/108346fee3ef6a780defddeecb004f5ce22f32e5/check-runs?per_page=100"
+      },
+      "recorded_at": "2021-01-19T09:20:31"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/issues/10"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA+1YW2+bShD+KxZS3mIDvmAHqTo6rk+qSrWttrhNE0VogcXenoWl7OJLUf57Z7nE4FZOHNy3PNkLO9/ObeebIVWSmCqmshIi4qaqooh0lkSsEqfjskCNccS4yqMVCbdtwRh12LZcokQwn2xFEmOVcJ5gruqacqlkMkSweGefAxsQKXIw5WdB22uq5qipGqIAP8ApYG+AQ3H2c0pcOAKv/8YBOSrAr0RAD7xUieXTUYwSSvMYEk8xh6NRXzNGvatLJWQetuUzZTr5bzunY915t/18e3Ot397MtJm16M6t9z/nltsDLcIkcHCsmLp2qQgiKAaxuyjGbekIIjouuW/tly2ZRknkIYFBNuFSMlUoW5IQ5Pb72i65c5i4h01SEcMYDXq63qvrNjU+Blfa7Pu3/syabqfW9A1sR2skUHyYPdlDrhfJLs91WSggPFnek1A1Rsaw+8/6TR8glnEBkvlA6nns0kgwrtZUvxiMQfmLweTJKKEoOpAFEZ9RyjaAemhF/bYeO1h9xHjEI+GyMR5gpCoTKwwOBrPlPVoS/tQlOqpoJp+q8gdyTiJyCFWMvQbKFgig6iYELdOssGXQicPdmESCsLCJd2s4gMviJQrJT9QUF3A4wGU1tYH9mTzgPKcAHQ1ODpBCdpM1cnfShTF2MVlDeBqDHyABtthFsnyMmZCxIgLbyAtkZfAR5fihpAbFvEuzstCFuqANtb7RrReGhWG9uya3Xzc7WRymE3czm3zbAebRi/xc9suZRPURoUCG5kVX+0DCZAvwkltA//JNq3zuMsqg0CnXxnjyVpKmh32UUFEYJtePaQnbrBXORVsCw+VooRi3JCbcvo7ycFm3fTB62vaFrGp/yfavJPTYRmbbofX7N4/2a8P+8Hn2F8J/9MB9ViOAQUyFRTiEoylz/8eQEFmeAAdwTpYhhg17bvFY4Pku88CJICCzZ6QNNKCVuvs+Gl9uZtT9vtzMrH8lr7yUUxK1wG9AKnWdj/N9fe9JFFIRfTlv/A7ShCyqaI0Yogp0PlqooVY5BVLrZC6ogp1KAFXZ06t+Vfo8pb6uT40pwDVFfV/Itu/PBb68uTyr8WVfWEF9vbvlsJYTd9XhL+75fgd5vbvP6w9f727ZnAEpB4RCv8JC4N0QZsv9jK2YMBy6MQbO9mwEbY/S1bp6W9Pb+sjSDbM3MLXBrexRssnwcM+VpV3BfGn2enKPSxkvtuSnwEi5YrENpYO5JGvB4YC385n16f14Yc0/gQxyBfSstmwTbFCDyy25sByC4dEP+J4BeqXn6ZIkaPF55DhpnzKke8T3zzDudyQOuCRCwl2dAy8DgrZUcZi3s6W9+dCcLQXeynDDeXKZ/ysC6MCyiAGOfRYHENQ1QXb+DcOGyTh///ALc6ClabUSAAA="
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:31 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"43aea42515735eba4e7185c98cf75e231e4ba789617ba9dbba290cd30d9b317d\""
+          ],
+          "last-modified": [
+            "Tue, 19 Jan 2021 09:10:33 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4995"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "5"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41F02A:D32B79C:6006A45F"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/issues/10"
+      },
+      "recorded_at": "2021-01-19T09:20:31"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/issues/10/labels?per_page=100"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA7WQy0rDQBSGXyUMuIuZIcSkZKmhbmxXLaWKyCSZNEemc4a5kBTx3Z2gUQoF3bj8L+eH7zy9EWhJmeb5ghUsy9OYKGzFy2SSVbXNN/dLeNwNp/XrPltVzbCu9icSE29kKPTOaVtSyjUkB3C9r5MGj9QIjZZa3YMarx2irHGcJfcOOxidN4JKXgtpacdBBllepewBlB/DvOJHEfbnJJr9BiWaECzz2+qOhWIrOu6lI2XHpRWTto0B7QBVqG168XkaOWGdjbgR0bQJ6pCQ9/ic/WbxO/s2+z/2HagWB3uB/if55mdFVvyN/+v44geePwDbCech/wEAAA=="
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:31 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"f102c86d233b735c721fab727cf35972d4a294e30e942082c9b9589a00a423dc\""
+          ],
+          "last-modified": [
+            "Tue, 19 Jan 2021 09:10:33 GMT"
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4994"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "6"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41F096:D32B829:6006A45F"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/issues/10/labels?per_page=100"
+      },
+      "recorded_at": "2021-01-19T09:20:31"
+    },
+    {
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "[\"failure: Linux\", \"failure: Windows\"]"
+        },
+        "headers": {
+          "User-Agent": [
+            "github3.py/1.3.0"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Accept": [
+            "application/vnd.github.v3.full+json"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Accept-Charset": [
+            "utf-8"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Content-Length": [
+            "38"
+          ],
+          "Authorization": [
+            "token FAKE_TOKEN"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/issues/10/labels"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "base64_string": "H4sIAAAAAAAAA7WQy0rDQBSGXyUMuIuZIcSkZKmhbmxXLaWKyCSZNEemc4a5kBTx3Z2gUQoF3bj8L+eH7zy9EWhJmeb5ghUsy9OYKGzFy2SSVbXNN/dLeNwNp/XrPltVzbCu9icSE29kKPTOaVtSyjUkB3C9r5MGj9QIjZZa3YMarx2irHGcJfcOOxidN4JKXgtpacdBBllepewBlB/DvOJHEfbnJJr9BiWaECzz2+qOhWIrOu6lI2XHpRWTto0B7QBVqG168XkaOWGdjbgR0bQJ6pCQ9/ic/WbxO/s2+z/2HagWB3uB/if55mdFVvyN/+v44geePwDbCech/wEAAA=="
+        },
+        "headers": {
+          "Date": [
+            "Tue, 19 Jan 2021 09:20:32 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP",
+            "Accept-Encoding, Accept, X-Requested-With",
+            "Accept-Encoding"
+          ],
+          "ETag": [
+            "W/\"f102c86d233b735c721fab727cf35972d4a294e30e942082c9b9589a00a423dc\""
+          ],
+          "X-OAuth-Scopes": [
+            "read:gpg_key, read:org, read:public_key, read:repo_hook, repo, user, workflow"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; param=full; format=json"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4993"
+          ],
+          "X-RateLimit-Reset": [
+            "1611051629"
+          ],
+          "x-ratelimit-used": [
+            "7"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ],
+          "Referrer-Policy": [
+            "origin-when-cross-origin, strict-origin-when-cross-origin"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "X-GitHub-Request-Id": [
+            "DE7A:11C4E:B41F119:D32B8D5:6006A45F"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/sphinx-toolbox/sphinx-autofixture/issues/10/labels"
+      },
+      "recorded_at": "2021-01-19T09:20:32"
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}
