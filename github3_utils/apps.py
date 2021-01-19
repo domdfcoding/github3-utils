@@ -124,9 +124,10 @@ def iter_installed_repos(
 			context_switcher = ContextSwitcher(client, private_key_pem, app_id)
 
 	context_switcher.login_as_app()
+	client = context_switcher.client
 
 	installation: Installation
-	for installation in client.app_installations(context_switcher.app_id):  # type: ignore
+	for installation in client.app_installations(context_switcher.app_id):
 		# print(installation)
 		# print(installation.account)
 		username = installation.account["login"]
