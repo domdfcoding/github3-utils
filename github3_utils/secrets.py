@@ -31,7 +31,7 @@ from base64 import b64encode
 
 # 3rd party
 from apeye import URL
-from github3.repos import Repository  # type: ignore
+from github3.repos import Repository
 from nacl import encoding, public  # type: ignore
 from requests import Response
 

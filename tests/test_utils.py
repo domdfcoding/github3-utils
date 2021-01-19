@@ -4,8 +4,8 @@ import os
 # 3rd party
 import pytest
 from betamax import Betamax  # type: ignore
-from github3 import GitHub  # type: ignore
-from github3.exceptions import AuthenticationFailed  # type: ignore
+from github3 import GitHub
+from github3.exceptions import AuthenticationFailed
 from pytest_regressions.data_regression import DataRegressionFixture
 
 # this package

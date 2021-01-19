@@ -62,8 +62,8 @@ from typing import List, Optional
 import attr
 from apeye import URL
 from click import echo
-from github3 import GitHub, users  # type: ignore
-from github3.repos.branch import Branch  # type: ignore
+from github3 import GitHub, users
+from github3.repos.branch import Branch
 
 # this package
 from github3_utils.headers import LUKE_CAKE

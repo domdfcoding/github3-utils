@@ -46,7 +46,7 @@ To use this module you need to add, at a minimum, the following to your ``confte
 import pytest  # nodep
 from _pytest.fixtures import FixtureRequest  # nodep
 from betamax import Betamax  # type: ignore  # nodep
-from github3 import GitHub  # type: ignore
+from github3 import GitHub
 
 __all__ = ["cassette", "github_client", "module_cassette"]
 

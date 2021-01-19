@@ -33,8 +33,8 @@ from typing import Dict, Iterator, Optional
 # 3rd party
 import attr
 from domdf_python_tools.stringlist import DelimitedList
-from github3 import GitHub  # type: ignore
-from github3.apps import Installation  # type: ignore
+from github3 import GitHub
+from github3.apps import Installation
 from typing_extensions import Literal
 
 # this package

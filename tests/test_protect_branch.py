@@ -1,6 +1,6 @@
 # 3rd party
-from github3.repos import Repository  # type: ignore
-from github3.repos.branch import Branch, BranchProtection  # type: ignore
+from github3.repos import Repository
+from github3.repos.branch import Branch, BranchProtection
 
 # this package
 from github3_utils import protect_branch

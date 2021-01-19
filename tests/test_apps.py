@@ -6,7 +6,7 @@ import pytest
 from betamax import Betamax  # type: ignore
 from domdf_python_tools.stringlist import StringList
 from domdf_python_tools.testing import check_file_regression
-from github3 import GitHub  # type: ignore
+from github3 import GitHub
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.file_regression import FileRegressionFixture
 

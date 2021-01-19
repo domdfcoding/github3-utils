@@ -33,13 +33,13 @@ from typing import Dict, NamedTuple, Set, Union
 
 # 3rd party
 import attr
-import github3.issues.label  # type: ignore
+import github3.issues.label
 from domdf_python_tools.doctools import prettify_docstrings
-from github3.checks import CheckRun  # type: ignore
-from github3.issues import Issue  # type: ignore
+from github3.checks import CheckRun
+from github3.issues import Issue
 from github3.pulls import PullRequest, ShortPullRequest
-from github3.repos import Repository  # type: ignore
-from github3.repos.commit import ShortCommit  # type: ignore
+from github3.repos import Repository
+from github3.repos.commit import ShortCommit
 
 __all__ = ["Label", "check_status_labels", "Checks", "get_checks_for_pr", "label_pr_failures"]
 
@@ -169,8 +169,8 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 
 	pr_checks = get_checks_for_pr(pull)
 
-	failure_labels = set()
-	success_labels = set()
+	failure_labels: Set[str] = set()
+	success_labels: Set[str] = set()
 
 	def determine_labels(from_, to):
 		for check in from_:
