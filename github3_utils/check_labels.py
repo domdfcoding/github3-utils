@@ -159,7 +159,7 @@ def get_checks_for_pr(pull: Union[PullRequest, ShortPullRequest]) -> Checks:
 			)
 
 
-_python_dev_re = re.compile(r".*Python\s*\d+\.\d+-(dev|alpha|beta|rc).*", flags=re.IGNORECASE)
+_python_dev_re = re.compile(r".*Python\s*\d+\.\d+.*(dev|alpha|beta|rc).*", flags=re.IGNORECASE)
 
 
 def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
