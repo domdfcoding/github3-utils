@@ -44,3 +44,6 @@ tox_testenv_extras: all
 
 sphinx_conf_epilogue:
  - toctree_plus_types.add("fixture")
+
+additional_ignore:
+ - label.py
