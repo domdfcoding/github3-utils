@@ -29,6 +29,7 @@ Helpers for creating labels to mark pull requests with which tests are failing.
 #
 
 # stdlib
+import re
 from typing import Dict, NamedTuple, Set, Union
 
 # 3rd party
@@ -158,6 +159,9 @@ def get_checks_for_pr(pull: Union[PullRequest, ShortPullRequest]) -> Checks:
 			)
 
 
+_python_dev_re = re.compile(r".*Python\s*\d+\.\d+-(dev|alpha|beta|rc).*", flags=re.IGNORECASE)
+
+
 def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 	"""
 	Labels the given pull request to indicate which checks are failing.
@@ -174,6 +178,9 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 
 	def determine_labels(from_, to):
 		for check in from_:
+			if _python_dev_re.match(check):
+				continue
+
 			if check in {"Flake8", "docs"}:
 				to.add(check_status_labels[f"failure: {check.lower()}"])
 			elif check.startswith("mypy"):
