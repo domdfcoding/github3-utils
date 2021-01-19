@@ -1,0 +1,26 @@
+failing:
+- macos-latest / Python 3.6
+- macos-latest / Python 3.7
+- macos-latest / Python 3.8
+- macos-latest / Python 3.9
+- ubuntu-20.04 / Python 3.6
+- ubuntu-20.04 / Python 3.7
+- ubuntu-20.04 / Python 3.8
+- ubuntu-20.04 / Python 3.9
+- windows-2019 / Python 3.6
+- windows-2019 / Python 3.7
+- windows-2019 / Python 3.8
+- windows-2019 / Python 3.9
+neutral: []
+running: []
+skipped:
+- Coverage
+- Deploy
+successful:
+- CodeFactor
+- Conda
+- Flake8
+- docs
+- mypy / macos-latest
+- mypy / ubuntu-latest
+- mypy / windows-latest
