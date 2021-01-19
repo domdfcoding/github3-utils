@@ -197,14 +197,12 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 
 	current_labels = {label.name for label in issue.labels()}
 
-	# Only remove from current labels if in "success_labels"
-	current_labels.update(failure_labels)
-
 	for label in success_labels:
-		if label in current_labels:
+		if label in current_labels and label not in failure_labels:
 			issue.remove_label(label)
 
 	current_labels -= success_labels
+	current_labels.update(failure_labels)
 
 	issue.add_labels(*current_labels)
 
