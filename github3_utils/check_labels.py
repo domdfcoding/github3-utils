@@ -182,7 +182,7 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 				continue
 
 			if check in {"Flake8", "docs"}:
-				to.add(check_status_labels[f"failure: {check.lower()}"])
+				to.add(f"failure: {check.lower()}")
 			elif check.startswith("mypy"):
 				to.add("failure: mypy")
 			elif check.startswith("ubuntu"):
