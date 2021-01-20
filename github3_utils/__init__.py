@@ -56,14 +56,15 @@ Handy utilities for `github3.py <https://github3py.readthedocs.io/en/master/>`_.
 import datetime
 import os
 from contextlib import contextmanager
-from typing import List, Optional
+from typing import Iterator, List, Optional, Union, overload
 
 # 3rd party
 import attr
 from apeye import URL
 from click import echo
-from github3 import GitHub, users
+from github3 import GitHub, orgs, repos, users
 from github3.repos.branch import Branch
+from typing_extensions import Literal
 
 # this package
 from github3_utils.headers import LUKE_CAKE
@@ -80,6 +81,7 @@ __all__ = [
 		"get_user",
 		"protect_branch",
 		"Impersonate",
+		"get_repos",
 		]
 
 
@@ -242,3 +244,43 @@ class Impersonate:
 		finally:
 			os.environ.clear()
 			os.environ.update(_environ)
+
+
+@overload
+def get_repos(
+		user_or_org: Union[users.User, orgs.Organization],
+		full: Literal[True],
+		) -> Iterator[repos.Repository]:
+	...
+
+
+@overload
+def get_repos(
+		user_or_org: Union[users.User, orgs.Organization],
+		full: Literal[False] = ...,
+		) -> Iterator[repos.ShortRepository]:
+	...
+
+
+def get_repos(
+		user_or_org: Union[users.User, orgs.Organization],
+		full: bool = False,
+		) -> Union[Iterator[repos.Repository], Iterator[repos.ShortRepository]]:
+	"""
+	Returns an iterator over the user or organisation's repositories.
+
+	.. versionadded:: 0.5.0
+
+	:param user_or_org:
+	:param full: If :py:obj:`True` yields :class:`github3.repos.Repository` objects.
+		Otherwise, yields :class:`github3.repos.ShortRepository` objects
+	"""
+
+	url = user_or_org._build_url("users", user_or_org.login, "repos")
+	params = {"type": "owner", "sort": "full_name", "direction": "asc"}
+
+	for repo in user_or_org._iter(-1, url, repos.ShortRepository, params):
+		if full:
+			yield repo.refresh()
+		else:
+			yield repo
