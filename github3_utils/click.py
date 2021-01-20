@@ -29,15 +29,17 @@ Extensions for `click <https://click.palletsprojects.com/en/7.x/>`_.
 #
 
 # stdlib
-from typing import Callable
+from typing import Callable, TypeVar
 
 # 3rd party
 import click
 
 __all__ = ["token_option"]
 
+_C = TypeVar("_C", bound=click.Command)
 
-def token_option(token_var: str = "GITHUB_TOKEN") -> Callable:  # nosec: B107
+
+def token_option(token_var: str = "GITHUB_TOKEN") -> Callable[[_C], _C]:  # nosec: B107
 	"""
 	Creates a ``-t / --token`` option for the GitHub API token.
 
