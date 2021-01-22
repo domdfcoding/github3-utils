@@ -133,7 +133,7 @@ def get_checks_for_pr(pull: Union[PullRequest, ShortPullRequest]) -> Checks:
 	check_run: CheckRun
 	for check_run in head_commit.check_runs():
 
-		if check_run.status in {"queued", "in_progress"}:
+		if check_run.status in {"queued", "running", "in_progress"}:
 			running.add(check_run.name)
 		elif check_run.conclusion in {"failure", "cancelled", "timed_out", "action_required"}:
 			failing.add(check_run.name)
