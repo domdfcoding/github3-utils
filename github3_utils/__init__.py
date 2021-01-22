@@ -56,14 +56,17 @@ Handy utilities for `github3.py <https://github3py.readthedocs.io/en/master/>`_.
 import datetime
 import os
 from contextlib import contextmanager
-from typing import Iterator, List, Optional, Union, overload
+from typing import Iterable, Iterator, List, Optional, Union, overload
 
 # 3rd party
 import attr
 from apeye import URL
 from click import echo
-from github3 import GitHub, orgs, repos, users
+from github3 import GitHub
+from github3.orgs import Organization
+from github3.repos import Repository, ShortRepository
 from github3.repos.branch import Branch
+from github3.users import User
 from typing_extensions import Literal
 
 # this package
@@ -82,6 +85,7 @@ __all__ = [
 		"protect_branch",
 		"Impersonate",
 		"get_repos",
+		"iter_repos",
 		]
 
 
@@ -130,7 +134,7 @@ def echo_rate_limit(github: GitHub, verbose: bool = True):
 		echo(f"Used {used_requests} requests. {new_remaining_requests} remaining. Resets at {reset}")
 
 
-def get_user(github: GitHub) -> users.User:
+def get_user(github: GitHub) -> User:
 	"""
 	Retrieve a :class:`github3.users.User` object for the authenticated user.
 
@@ -139,7 +143,7 @@ def get_user(github: GitHub) -> users.User:
 
 	url = github._build_url("user")
 	json = github._json(github._get(url), 200)
-	return github._instance_or_null(users.User, json)
+	return github._instance_or_null(User, json)
 
 
 def protect_branch(branch: Branch, status_checks: Optional[List[str]] = None) -> bool:
@@ -248,24 +252,24 @@ class Impersonate:
 
 @overload
 def get_repos(
-		user_or_org: Union[users.User, orgs.Organization],
+		user_or_org: Union[User, Organization],
 		full: Literal[True],
-		) -> Iterator[repos.Repository]:
+		) -> Iterator[Repository]:
 	...
 
 
 @overload
 def get_repos(
-		user_or_org: Union[users.User, orgs.Organization],
+		user_or_org: Union[User, Organization],
 		full: Literal[False] = ...,
-		) -> Iterator[repos.ShortRepository]:
+		) -> Iterator[ShortRepository]:
 	...
 
 
 def get_repos(
-		user_or_org: Union[users.User, orgs.Organization],
+		user_or_org: Union[User, Organization],
 		full: bool = False,
-		) -> Union[Iterator[repos.Repository], Iterator[repos.ShortRepository]]:
+		) -> Union[Iterator[Repository], Iterator[ShortRepository]]:
 	"""
 	Returns an iterator over the user or organisation's repositories.
 
@@ -279,8 +283,39 @@ def get_repos(
 	url = user_or_org._build_url("users", user_or_org.login, "repos")
 	params = {"type": "owner", "sort": "full_name", "direction": "asc"}
 
-	for repo in user_or_org._iter(-1, url, repos.ShortRepository, params):
+	for repo in user_or_org._iter(-1, url, ShortRepository, params):
 		if full:
 			yield repo.refresh()
 		else:
 			yield repo
+
+
+def iter_repos(
+		github: GitHub,
+		users: Iterable[str] = (),
+		orgs: Iterable[str] = (),
+		) -> Iterator[ShortRepository]:
+	"""
+	Returns an iterator over the repositories belonging to all ``users`` and all ``orgs``.
+
+	.. versionadded:: 0.5.0
+
+	:param github:
+	:param users: An iterable of usernames to fetch the repositories for.
+	:param orgs: An iterable of organization names to fetch the repositories for.
+	"""
+
+	for user in users:
+		_user: Optional[User] = github.user(user)
+		if _user is None:
+			raise ValueError(f"No such user {user}")
+
+		yield from get_repos(_user, full=False)
+
+	for org in orgs:
+		_org: Optional[Organization] = github.organization(org)
+
+		if _org is None:
+			raise ValueError(f"No such organization {org}")
+
+		yield from get_repos(_org, full=False)

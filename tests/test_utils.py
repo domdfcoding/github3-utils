@@ -10,7 +10,7 @@ from github3.repos import Repository
 from pytest_regressions.data_regression import DataRegressionFixture
 
 # this package
-from github3_utils import Impersonate, get_repos, get_user
+from github3_utils import Impersonate, get_repos, get_user, iter_repos
 
 
 def test_get_user(data_regression: DataRegressionFixture, github_client):
@@ -56,19 +56,28 @@ def test_impersonate():
 	assert os.environ.get("GIT_AUTHOR_EMAIL", '') != email
 
 
-def test_get_repos(github_client, cassette, data_regression):
-	user = github_client.user("domdfcoding")
-	data_regression.check([repo.name for repo in get_repos(user)])
+class TestGetRepos:
+
+	def test_get_repos(self, github_client, cassette, data_regression):
+		user = github_client.user("domdfcoding")
+		data_regression.check([repo.name for repo in get_repos(user)])
+
+	def test_get_repos_full(self, github_client, cassette, data_regression):
+		user = github_client.user("domdfcoding")
+
+		repo: Repository
+		for repo in get_repos(user, full=True):
+			assert isinstance(repo, Repository)
+
+	def test_get_repos_org(self, github_client, cassette, data_regression):
+		user = github_client.organization("sphinx-toolbox")
+		data_regression.check([repo.name for repo in get_repos(user)])
 
 
-def test_get_repos_full(github_client, cassette, data_regression):
-	user = github_client.user("domdfcoding")
+class TestIterRepos:
 
-	repo: Repository
-	for repo in get_repos(user, full=True):
-		assert isinstance(repo, Repository)
+	def test_get_repos(self, github_client, cassette, data_regression):
+		data_regression.check([repo.name for repo in iter_repos(github_client, ["domdfcoding"])])
 
-
-def test_get_repos_org(github_client, cassette, data_regression):
-	user = github_client.organization("sphinx-toolbox")
-	data_regression.check([repo.name for repo in get_repos(user)])
+	def test_get_repos_org(self, github_client, cassette, data_regression):
+		data_regression.check([repo.name for repo in iter_repos(github_client, orgs=["sphinx-toolbox"])])
