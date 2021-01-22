@@ -78,6 +78,21 @@ class ContextSwitcher:
 
 		return installation_id
 
+	def login_as_org_installation(self, organization: str) -> int:
+		"""
+		Login as an organization installation of a GitHub app, and return its installation ID.
+
+		.. versionadded:: 0.5.0
+
+		:param organization:
+		"""
+
+		# Log in as installation for this org
+		installation_id = self.client.app_installation_for_organization(organization).id
+		self.client.login_as_app_installation(self.private_key_pem, self.app_id, installation_id)
+
+		return installation_id
+
 	def login_as_repo_installation(self, owner: str, repository: str) -> int:
 		"""
 		Login as a repository installation of a GitHub app, and return its installation ID.
