@@ -254,16 +254,14 @@ class Impersonate:
 def get_repos(
 		user_or_org: Union[User, Organization],
 		full: Literal[True],
-		) -> Iterator[Repository]:
-	...
+		) -> Iterator[Repository]: ...
 
 
 @overload
 def get_repos(
 		user_or_org: Union[User, Organization],
 		full: Literal[False] = ...,
-		) -> Iterator[ShortRepository]:
-	...
+		) -> Iterator[ShortRepository]: ...
 
 
 def get_repos(
