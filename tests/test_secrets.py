@@ -1,6 +1,6 @@
 # 3rd party
 from apeye import URL
-from pytest_regressions.data_regression import DataRegressionFixture
+from coincidence.regressions import AdvancedDataRegressionFixture
 
 # this package
 from github3_utils.secrets import build_secrets_url, encrypt_secret, get_public_key, get_secrets, set_secret
@@ -14,17 +14,17 @@ def test_build_secrets_url(github_client, module_cassette):
 	assert secrets_url == URL("https://api.github.com/repos/domdfcoding/repo_helper_demo/actions/secrets")
 
 
-def test_get_public_key(data_regression: DataRegressionFixture, github_client, module_cassette):
+def test_get_public_key(advanced_data_regression: AdvancedDataRegressionFixture, github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
-	data_regression.check(get_public_key(repo))
+	advanced_data_regression.check(get_public_key(repo))
 
 
-def test_get_secrets(data_regression: DataRegressionFixture, github_client, cassette):
+def test_get_secrets(advanced_data_regression: AdvancedDataRegressionFixture, github_client, cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
-	data_regression.check(get_secrets(repo))
+	advanced_data_regression.check(get_secrets(repo))
 
 
-def test_encrypt_secret(data_regression: DataRegressionFixture, github_client, module_cassette):
+def test_encrypt_secret(advanced_data_regression: AdvancedDataRegressionFixture, github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 
 	public_key = get_public_key(repo)
@@ -34,7 +34,7 @@ def test_encrypt_secret(data_regression: DataRegressionFixture, github_client, m
 	assert len(secret) == 80
 
 
-def test_set_secret(data_regression: DataRegressionFixture, github_client, module_cassette):
+def test_set_secret(advanced_data_regression: AdvancedDataRegressionFixture, github_client, module_cassette):
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 
 	public_key = get_public_key(repo)

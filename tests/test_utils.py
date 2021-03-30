@@ -4,23 +4,23 @@ import os
 # 3rd party
 import pytest
 from betamax import Betamax  # type: ignore
+from coincidence.regressions import AdvancedDataRegressionFixture
 from github3 import GitHub
 from github3.exceptions import AuthenticationFailed
 from github3.repos import Repository
-from pytest_regressions.data_regression import DataRegressionFixture
 
 # this package
 from github3_utils import Impersonate, get_repos, get_user, iter_repos
 
 
-def test_get_user(data_regression: DataRegressionFixture, github_client):
+def test_get_user(advanced_data_regression: AdvancedDataRegressionFixture, github_client):
 	with Betamax(github_client.session) as vcr:
 		vcr.use_cassette("test_get_user", record="once")
 
-		data_regression.check(get_user(github_client).as_dict())
+		advanced_data_regression.check(get_user(github_client).as_dict())
 
 
-def test_get_user_no_auth(data_regression: DataRegressionFixture):
+def test_get_user_no_auth():
 	github = GitHub('')
 
 	with Betamax(github.session) as vcr:

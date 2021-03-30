@@ -1,8 +1,8 @@
 # 3rd party
 import click
 from click.testing import CliRunner, Result
+from coincidence.regressions import check_file_regression
 from consolekit import click_command
-from domdf_python_tools.testing import check_file_regression
 
 # this package
 from github3_utils.click import token_option

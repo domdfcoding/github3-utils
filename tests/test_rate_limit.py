@@ -1,6 +1,6 @@
 # 3rd party
 import pytest
-from domdf_python_tools.testing import check_file_regression
+from coincidence.regressions import check_file_regression
 
 # this package
 from github3_utils import RateLimitExceeded, echo_rate_limit
