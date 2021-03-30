@@ -4,7 +4,7 @@ github3-utils
 
 .. start short_desc
 
-**Handy utilities for github3.py**
+.. documentation-summary::
 
 .. end short_desc
 
