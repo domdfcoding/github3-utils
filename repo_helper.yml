@@ -15,6 +15,9 @@ tox_testenv_extras: all
 min_coverage: 95
 use_whey: true
 
+conda_channels:
+ - conda-forge
+
 python_versions:
  - 3.6
  - 3.7
