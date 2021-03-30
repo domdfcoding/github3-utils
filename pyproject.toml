@@ -1,3 +1,42 @@
 [build-system]
-requires = [ "setuptools>=40.6.0", "wheel>=0.34.2",]
-build-backend = "setuptools.build_meta"
+requires = [ "whey",]
+build-backend = "whey"
+
+[project]
+name = "github3-utils"
+version = "0.5.0"
+description = "Handy utilities for github3.py"
+readme = "README.rst"
+keywords = [ "github",]
+dynamic = [ "requires-python", "classifiers", "dependencies",]
+
+[[project.authors]]
+email = "dominic@davis-foster.co.uk"
+name = "Dominic Davis-Foster"
+
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Homepage = "https://github.com/domdfcoding/github3-utils"
+"Issue Tracker" = "https://github.com/domdfcoding/github3-utils/issues"
+"Source Code" = "https://github.com/domdfcoding/github3-utils"
+Documentation = "https://github3-utils.readthedocs.io/en/latest"
+
+[project.optional-dependencies]
+testing = [ "betamax>=0.8.1", "pytest>=6.0.0",]
+all = [ "betamax>=0.8.1", "pytest>=6.0.0",]
+
+[tool.whey]
+base-classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+python-versions = [ "3.6", "3.7", "3.8", "3.9",]
+python-implementations = [ "CPython",]
+platforms = [ "Windows", "macOS", "Linux",]
+license-key = "MIT"
+package = "github3_utils"
