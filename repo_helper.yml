@@ -9,7 +9,10 @@ version: '0.5.0'
 license: 'MIT'
 short_desc: 'Handy utilities for github3.py'
 
-enable_conda: false
+mypy_version: "0.812"
+sphinx_html_theme: furo
+tox_testenv_extras: all
+min_coverage: 95
 
 python_versions:
  - 3.6
@@ -26,8 +29,6 @@ classifiers:
  - 'Intended Audience :: Developers'
  - 'Topic :: Software Development :: Libraries :: Python Modules'
 
-sphinx_html_theme: furo
-
 extra_sphinx_extensions:
  - attr_utils.autoattrs
  - attr_utils.annotations
@@ -41,12 +42,8 @@ extras_require:
   - pytest>=6.0.0
   - betamax>=0.8.1
 
-tox_testenv_extras: all
-
 sphinx_conf_epilogue:
  - toctree_plus_types.add("fixture")
 
 additional_ignore:
  - label.py
-
-min_coverage: 95
