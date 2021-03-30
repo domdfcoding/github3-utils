@@ -27,7 +27,6 @@ __copyright__ = """
 """
 
 __version__ = "0.5.0"
-
 repo_root = pathlib.Path(__file__).parent
 install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
-extras_require = {"testing": ["pytest>=6.0.0", "betamax>=0.8.1"], "all": ["betamax>=0.8.1", "pytest>=6.0.0"]}
+extras_require = {"testing": ["betamax>=0.8.1", "pytest>=6.0.0"], "all": ["betamax>=0.8.1", "pytest>=6.0.0"]}
