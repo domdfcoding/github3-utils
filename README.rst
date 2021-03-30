@@ -21,6 +21,8 @@ github3-utils
 	  - |actions_linux| |actions_windows| |actions_macos| |coveralls|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+	* - Anaconda
+	  - |conda-version| |conda-platform|
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
@@ -84,6 +86,14 @@ github3-utils
 	:target: https://pypi.org/project/github3-utils/
 	:alt: PyPI - Wheel
 
+.. |conda-version| image:: https://img.shields.io/conda/v/domdfcoding/github3-utils?logo=anaconda
+	:target: https://anaconda.org/domdfcoding/github3-utils
+	:alt: Conda - Package Version
+
+.. |conda-platform| image:: https://img.shields.io/conda/pn/domdfcoding/github3-utils?label=conda%7Cplatform
+	:target: https://anaconda.org/domdfcoding/github3-utils
+	:alt: Conda - Platform
+
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/github3-utils
 	:target: https://github.com/domdfcoding/github3-utils/blob/master/LICENSE
 	:alt: License
@@ -117,12 +127,26 @@ Installation
 
 .. start installation
 
-``github3-utils`` can be installed from PyPI.
+``github3-utils`` can be installed from PyPI or Anaconda.
 
 To install with ``pip``:
 
 .. code-block:: bash
 
 	$ python -m pip install github3-utils
+
+To install with ``conda``:
+
+	* First add the required channels
+
+	.. code-block:: bash
+
+		$ conda config --add channels http://conda.anaconda.org/domdfcoding
+
+	* Then install
+
+	.. code-block:: bash
+
+		$ conda install github3-utils
 
 .. end installation
