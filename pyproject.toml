@@ -42,7 +42,11 @@ license-key = "MIT"
 package = "github3_utils"
 
 [tool.dep_checker]
-allowed_unused = ["cryptography"]
+allowed_unused = [ "cryptography",]
+
+[tool.mkrecipe]
+conda-channels = [ "conda-forge", "domdfcoding",]
+extras = "all"
 
 [tool.dep_checker.name_mapping]
 github3_py = "github3"

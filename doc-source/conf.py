@@ -15,21 +15,11 @@ from __pkginfo__ import __version__
 
 github_username = "domdfcoding"
 github_repository = "github3-utils"
-github_url = f"https://github.com/{github_username}/{github_repository}"
-
-rst_prolog = f""".. |pkgname| replace:: github3-utils
-.. |pkgname2| replace:: ``github3-utils``
-.. |browse_github| replace:: `Browse the GitHub Repository <{github_url}>`__
-"""
-
 author = "Dominic Davis-Foster"
-project = "github3-utils".replace('_', '-')
-slug = re.sub(r'\W+', '-', project.lower())
-release = version = __version__
-copyright = "2020-2021 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
+project = "github3-utils"
+copyright = "2020-2021 Dominic Davis-Foster"
 language = "en"
 package_root = "github3_utils"
-
 extensions = [
 		"sphinx_toolbox",
 		"sphinx_toolbox.more_autodoc",
@@ -53,71 +43,38 @@ extensions = [
 		"attr_utils.annotations",
 		"sphinx_autofixture",
 		]
-
 sphinxemoji_style = "twemoji"
-todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
 gitstamp_fmt = "%d %b %Y"
-
 templates_path = ["_templates"]
 html_static_path = ["_static"]
 source_suffix = ".rst"
 master_doc = "index"
 suppress_warnings = ["image.nonlocal_uri"]
 pygments_style = "default"
-
-intersphinx_mapping = {
-		"python": ("https://docs.python.org/3/", None),
-		"sphinx": ("https://www.sphinx-doc.org/en/stable/", None),
-		"github3": ("https://github3py.readthedocs.io/en/master/", None),
-		}
-
 html_theme = "furo"
-html_theme_options = {
-		"light_css_variables": {
-				"toc-title-font-size": "12pt",
-				"toc-font-size": "12pt",
-				"admonition-font-size": "12pt",
-				},
-		"dark_css_variables": {
-				"toc-title-font-size": "12pt",
-				"toc-font-size": "12pt",
-				"admonition-font-size": "12pt",
-				},
-		}
 html_theme_path = ["../.."]
-html_show_sourcelink = True  # True will show link to source
-
-html_context = {}
-htmlhelp_basename = slug
-
-latex_documents = [("index", f'{slug}.tex', project, author, "manual")]
-man_pages = [("index", slug, project, [author], 1)]
-texinfo_documents = [("index", slug, project, author, slug, project, "Miscellaneous")]
-
-toctree_plus_types = {
+html_show_sourcelink = True
+toctree_plus_types = [
 		"class",
+		"confval",
+		"data",
+		"directive",
+		"enum",
+		"exception",
+		"flag",
 		"function",
 		"method",
-		"data",
-		"enum",
-		"flag",
-		"confval",
-		"directive",
-		"role",
-		"confval",
-		"protocol",
-		"typeddict",
 		"namedtuple",
-		"exception",
-		}
-
+		"protocol",
+		"role",
+		"typeddict",
+		]
 add_module_names = False
 hide_none_rtype = True
 all_typevars = True
 overloads_location = "bottom"
 documentation_summary = "Handy utilities for github3.py"
-
-autodoc_exclude_members = [   # Exclude "standard" methods.
+autodoc_exclude_members = [
 		"__dict__",
 		"__class__",
 		"__dir__",
@@ -135,6 +92,47 @@ autodoc_exclude_members = [   # Exclude "standard" methods.
 		"__abstractmethods__",
 		"__hash__",
 		]
+
+github_url = f"https://github.com/{github_username}/{github_repository}"
+
+rst_prolog = f""".. |pkgname| replace:: github3-utils
+.. |pkgname2| replace:: ``github3-utils``
+.. |browse_github| replace:: `Browse the GitHub Repository <{github_url}>`__
+"""
+
+slug = re.sub(r'\W+', '-', project.lower())
+release = version = __version__
+
+todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
+
+intersphinx_mapping = {
+		"python": ("https://docs.python.org/3/", None),
+		"sphinx": ("https://www.sphinx-doc.org/en/stable/", None),
+		"github3": ("https://github3py.readthedocs.io/en/master/", None),
+		}
+
+html_theme_options = {
+		"light_css_variables": {
+				"toc-title-font-size": "12pt",
+				"toc-font-size": "12pt",
+				"admonition-font-size": "12pt",
+				},
+		"dark_css_variables": {
+				"toc-title-font-size": "12pt",
+				"toc-font-size": "12pt",
+				"admonition-font-size": "12pt",
+				},
+		}
+
+html_context = {}
+htmlhelp_basename = slug
+
+latex_documents = [("index", f'{slug}.tex', project, author, "manual")]
+man_pages = [("index", slug, project, [author], 1)]
+texinfo_documents = [("index", slug, project, author, slug, project, "Miscellaneous")]
+
+toctree_plus_types = set(toctree_plus_types)
+
 autodoc_default_options = {
 		"members": None,  # Include all members (methods).
 		"special-members": None,
