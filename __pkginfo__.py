@@ -15,18 +15,11 @@
 import pathlib
 
 __all__ = [
-		"__copyright__",
 		"__version__",
 		"repo_root",
-		"install_requires",
 		"extras_require",
 		]
 
-__copyright__ = """
-2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
-"""
-
 __version__ = "0.5.0"
 repo_root = pathlib.Path(__file__).parent
-install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
 extras_require = {"testing": ["betamax>=0.8.1", "pytest>=6.0.0"], "all": ["betamax>=0.8.1", "pytest>=6.0.0"]}

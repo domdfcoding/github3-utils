@@ -26,7 +26,7 @@ github3-utils
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -115,10 +115,6 @@ github3-utils
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/github3-utils
 	:target: https://pypi.org/project/github3-utils/
 	:alt: PyPI - Downloads
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/github3-utils/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/github3-utils/master
-	:alt: pre-commit.ci status
 
 .. end shields
 
