@@ -5,7 +5,7 @@
 Fixtures for `pytest <https://docs.pytest.org/en/stable/>`_.
 
 .. extras-require:: testing
-	:__pkginfo__:
+	:pyproject:
 
 .. versionadded:: 0.2.0
 
