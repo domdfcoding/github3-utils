@@ -11,15 +11,10 @@
 # This script based on https://github.com/rocky/python-uncompyle6/blob/master/__pkginfo__.py
 #
 
-# stdlib
-import pathlib
-
 __all__ = [
 		"__version__",
-		"repo_root",
 		"extras_require",
 		]
 
 __version__ = "0.5.0"
-repo_root = pathlib.Path(__file__).parent
 extras_require = {"testing": ["betamax>=0.8.1", "pytest>=6.0.0"], "all": ["betamax>=0.8.1", "pytest>=6.0.0"]}
