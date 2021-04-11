@@ -5,13 +5,11 @@
 # stdlib
 import os
 import re
-import sys
 
-sys.path.append(os.path.abspath('.'))
-sys.path.append(os.path.abspath(".."))
+# 3rd party
+from sphinx_pyproject import SphinxConfig
 
-# this package
-from __pkginfo__ import __version__
+config = SphinxConfig()
 
 github_username = "domdfcoding"
 github_repository = "github3-utils"
@@ -101,7 +99,7 @@ rst_prolog = f""".. |pkgname| replace:: github3-utils
 """
 
 slug = re.sub(r'\W+', '-', project.lower())
-release = version = __version__
+release = version = config.version
 
 todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
 
