@@ -1,3 +1,4 @@
+git+https://github.com/python/typing#egg=typing_extensions&subdirectory=typing_extensions
 attr-utils>=0.5.5
 autodocsumm>=0.2.0
 default-values>=0.4.2
