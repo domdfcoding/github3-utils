@@ -28,11 +28,12 @@ Functions for setting and updating GitHub Actions secrets.
 
 # stdlib
 from base64 import b64encode
+from typing import List
 
 # 3rd party
 from apeye import URL
 from github3.repos import Repository
-from nacl import encoding, public  # type: ignore
+from nacl import encoding, public
 from requests import Response
 
 # this package
@@ -83,7 +84,7 @@ def get_public_key(repo: Repository) -> "PublicKey":
 	return public_key
 
 
-def get_secrets(repo: Repository):
+def get_secrets(repo: Repository) -> List[str]:
 	"""
 	Returns a list of secret names for the given repository.
 
@@ -110,8 +111,8 @@ def encrypt_secret(public_key: str, secret_value: str) -> str:
 		get_secrets(repo)['key']
 	"""
 
-	public_key = public.PublicKey(public_key.encode("utf-8"), encoding.Base64Encoder())
-	sealed_box = public.SealedBox(public_key)
+	pubkey = public.PublicKey(public_key.encode("utf-8"), encoding.Base64Encoder())  # type: ignore[arg-type]
+	sealed_box = public.SealedBox(pubkey)
 	encrypted = sealed_box.encrypt(secret_value.encode("utf-8"))
 	return b64encode(encrypted).decode("utf-8")
 

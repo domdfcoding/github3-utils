@@ -1,5 +1,7 @@
 # 3rd party
+import pytest
 from coincidence.regressions import AdvancedDataRegressionFixture
+from github3 import GitHub
 from github3.pulls import PullRequest
 from github3.repos import Repository
 
@@ -7,7 +9,7 @@ from github3.repos import Repository
 from github3_utils.check_labels import Label, get_checks_for_pr, label_pr_failures
 
 
-def test_label_class():
+def test_label_class() -> None:
 	label = Label("failure: flake8", "#B60205", "The Flake8 check is failing.")
 	assert label.name == "failure: flake8"
 	assert label.color == "#B60205"
@@ -24,7 +26,8 @@ def test_label_class():
 			}
 
 
-def test_creation_on_repo(cassette, github_client):
+@pytest.mark.usefixtures("cassette")
+def test_creation_on_repo(github_client: GitHub) -> None:
 
 	repo = github_client.repository("domdfcoding", "repo_helper_demo")
 
@@ -40,11 +43,11 @@ def test_creation_on_repo(cassette, github_client):
 	assert "failure: flake8" in list(current_labels.keys())
 
 
+@pytest.mark.usefixtures("module_cassette")
 def test_get_checks_for_pr(
-		module_cassette,
-		github_client,
+		github_client: GitHub,
 		advanced_data_regression: AdvancedDataRegressionFixture,
-		):
+		) -> None:
 	repo: Repository = github_client.repository("sphinx-toolbox", "sphinx-autofixture")
 	pull: PullRequest = repo.pull_request(10)
 
@@ -52,7 +55,8 @@ def test_get_checks_for_pr(
 	advanced_data_regression.check({k: sorted(v) for k, v in checks._asdict().items()})
 
 
-def test_label_pr_failures(module_cassette, github_client):
+@pytest.mark.usefixtures("module_cassette")
+def test_label_pr_failures(github_client: GitHub) -> None:
 	repo: Repository = github_client.repository("sphinx-toolbox", "sphinx-autofixture")
 	pull: PullRequest = repo.pull_request(10)
 

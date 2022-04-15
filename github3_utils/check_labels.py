@@ -176,7 +176,7 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 	failure_labels: Set[str] = set()
 	success_labels: Set[str] = set()
 
-	def determine_labels(from_, to):
+	def determine_labels(from_: Set[str], to: Set[str]) -> None:
 		for check in from_:
 			if _python_dev_re.match(check):
 				continue

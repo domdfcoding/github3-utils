@@ -4,7 +4,7 @@ from typing import Optional
 
 # 3rd party
 import pytest
-from betamax import Betamax  # type: ignore
+from betamax import Betamax  # type: ignore[import]
 from coincidence.regressions import AdvancedDataRegressionFixture, AdvancedFileRegressionFixture
 from domdf_python_tools.stringlist import StringList
 from github3 import GitHub
@@ -32,7 +32,7 @@ FAKE_KEY = StringList([
 		])
 
 
-def test_iter_installed_repos(advanced_data_regression: AdvancedDataRegressionFixture):
+def test_iter_installed_repos(advanced_data_regression: AdvancedDataRegressionFixture) -> None:
 	github = GitHub()
 
 	GITHUBAPP_ID = 89426
@@ -53,7 +53,7 @@ def test_iter_installed_repos(advanced_data_regression: AdvancedDataRegressionFi
 		advanced_data_regression.check(repo_names)
 
 
-def test_iter_installed_repos_errors():
+def test_iter_installed_repos_errors() -> None:
 
 	error_msg = "Either 'context_switcher' or all of 'client', 'private_key_pem' and 'app_id' must be provided."
 

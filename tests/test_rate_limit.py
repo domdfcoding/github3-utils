@@ -1,23 +1,30 @@
 # 3rd party
 import pytest
-from coincidence.regressions import check_file_regression
+from coincidence import AdvancedFileRegressionFixture
+from github3 import GitHub
 
 # this package
 from github3_utils import RateLimitExceeded, echo_rate_limit
 
 
-def test_rate_limit(capsys, file_regression, cassette, github_client):
+@pytest.mark.usefixtures("cassette")
+def test_rate_limit(
+		capsys,
+		advanced_file_regression: AdvancedFileRegressionFixture,
+		github_client: GitHub,
+		) -> None:
 	with echo_rate_limit(github_client):
 		pass
 
-	check_file_regression(capsys.readouterr().out, file_regression)
+	advanced_file_regression.check(capsys.readouterr().out)
 
 
-def test_rate_limit_exceeded(capsys, file_regression, cassette, github_client):
-	with pytest.raises(  # noqa: PT012
-		RateLimitExceeded,
-		match="No requests available! Resets at 2020-12-31 00:04:05",
-		):
+@pytest.mark.usefixtures("cassette")
+def test_rate_limit_exceeded(capsys, github_client: GitHub) -> None:
+	with pytest.raises(
+			RateLimitExceeded,
+			match="No requests available! Resets at 2020-12-31 00:04:05",
+			):
 
 		with echo_rate_limit(github_client):
 			pass

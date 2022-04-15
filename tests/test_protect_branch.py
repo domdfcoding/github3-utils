@@ -1,4 +1,6 @@
 # 3rd party
+import pytest
+from github3 import GitHub
 from github3.repos import Repository
 from github3.repos.branch import Branch, BranchProtection
 
@@ -6,7 +8,8 @@ from github3.repos.branch import Branch, BranchProtection
 from github3_utils import protect_branch
 
 
-def test_protect_branch(cassette, github_client):
+@pytest.mark.usefixtures("cassette")
+def test_protect_branch(github_client: GitHub) -> None:
 	repo: Repository = github_client.repository("domdfcoding", "repo_helper_demo")
 	branch: Branch = repo.branch("master")
 

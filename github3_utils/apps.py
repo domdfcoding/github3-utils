@@ -59,7 +59,7 @@ class ContextSwitcher:
 	#: The integer identifier for this GitHub App.
 	app_id: int = attr.ib()
 
-	def login_as_app(self):
+	def login_as_app(self) -> None:
 		"""
 		Login as the GitHub app.
 		"""
@@ -139,6 +139,8 @@ def iter_installed_repos(
 		else:
 			context_switcher = ContextSwitcher(client, private_key_pem, app_id)
 
+	assert context_switcher is not None
+
 	context_switcher.login_as_app()
 	client = context_switcher.client
 
@@ -155,12 +157,14 @@ def iter_installed_repos(
 
 		headers = {**installation.session.headers, **MACHINE_MAN}
 
-		def get_page(page: int = 1):
-			return context_switcher.client.session.get(  # type: ignore
-				installation.repositories_url,
-				params={"per_page": 100, "page": page},
-				headers=headers,  # pylint: disable=cell-var-from-loop
-				).json()
+		def get_page(page: int = 1) -> Dict:
+			assert context_switcher is not None
+
+			return context_switcher.client.session.get(
+					installation.repositories_url,
+					params={"per_page": 100, "page": page},
+					headers=headers,  # pylint: disable=cell-var-from-loop
+					).json()
 
 		response = get_page()
 		total_repos = response["total_count"]

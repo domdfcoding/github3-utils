@@ -42,10 +42,13 @@ To use this module you need to add, at a minimum, the following to your ``confte
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+# stdlib
+from typing import Iterator
+
 # 3rd party
 import pytest  # nodep
 from _pytest.fixtures import FixtureRequest  # nodep
-from betamax import Betamax  # type: ignore  # nodep
+from betamax import Betamax  # type: ignore[import]  # nodep
 from github3 import GitHub
 
 __all__ = ["cassette", "github_client", "module_cassette"]
@@ -62,7 +65,7 @@ def github_client() -> GitHub:
 
 
 @pytest.fixture()
-def cassette(request: FixtureRequest, github_client):
+def cassette(request: FixtureRequest, github_client: GitHub) -> Iterator[GitHub]:
 	"""
 	Provides a Betamax cassette scoped to the test function
 	which record and plays back interactions with the GitHub API.
@@ -75,7 +78,7 @@ def cassette(request: FixtureRequest, github_client):
 
 
 @pytest.fixture()
-def module_cassette(request: FixtureRequest, github_client):
+def module_cassette(request: FixtureRequest, github_client: GitHub) -> Iterator[GitHub]:
 	"""
 	Provides a Betamax cassette scoped to the test module
 	which record and plays back interactions with the GitHub API.

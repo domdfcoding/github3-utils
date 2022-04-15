@@ -103,7 +103,7 @@ class RateLimitExceeded(RuntimeError):
 
 
 @contextmanager
-def echo_rate_limit(github: GitHub, verbose: bool = True):
+def echo_rate_limit(github: GitHub, verbose: bool = True) -> Iterator[GitHub]:
 	"""
 	Contextmanager to echo the GitHub API rate limit before and after making a series of requests.
 
@@ -227,7 +227,7 @@ class Impersonate:
 	email: str = attr.ib()
 
 	@contextmanager
-	def __call__(self):
+	def __call__(self) -> Iterator[None]:
 		"""
 		The context manager itself.
 		"""
