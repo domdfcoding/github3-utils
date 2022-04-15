@@ -27,11 +27,12 @@ Functions and classes for GitHub apps.
 #
 
 # stdlib
-from datetime import date
+import datetime
 from typing import Dict, Iterator, Optional
 
 # 3rd party
 import attr
+from domdf_python_tools.dates import calc_easter
 from domdf_python_tools.stringlist import DelimitedList
 from github3 import GitHub
 from github3.apps import Installation
@@ -181,7 +182,7 @@ _FooterType = Literal["marketplace", "app"]
 def make_footer_links(
 		owner: str,
 		name: str,
-		event_date: Optional[date] = None,
+		event_date: Optional[datetime.date] = None,
 		type: _FooterType = "marketplace",  # noqa: A002  # pylint: disable=redefined-builtin
 		docs_url: Optional[str] = None,
 		) -> str:
@@ -199,18 +200,27 @@ def make_footer_links(
 	"""
 
 	if event_date is None:
-		event_date = date.today()
+		event_date = datetime.date.today()
+
+	easter = calc_easter(event_date.year)
+	easter_margin = datetime.timedelta(days=7)
+
+	docs_emoji = '📝'
+	repo_emoji = ":octocat:"
+	issues_emoji = '🙋'
+	marketplace_emoji = '🏪'
 
 	if event_date.month == 12 or (event_date.month == 1 and event_date.day <= 6):
 		docs_emoji = '🎄'
 		repo_emoji = '☃'
 		issues_emoji = '🎅'
 		marketplace_emoji = '🎁'
-	else:
-		docs_emoji = '📝'
-		repo_emoji = ":octocat:"
-		issues_emoji = '🙋'
-		marketplace_emoji = '🏪'
+	elif event_date - easter_margin <= easter <= event_date + easter_margin:
+		marketplace_emoji = '🥚'
+		issues_emoji = '🐇'
+	elif datetime.date(event_date.year, 10, 24) <= event_date <= datetime.date(event_date.year, 11, 2):
+		issues_emoji = '👻'
+		marketplace_emoji = '🎃'
 
 	buf: DelimitedList[str] = DelimitedList()
 

@@ -1,5 +1,6 @@
 # stdlib
-from datetime import date
+import datetime
+from typing import Optional
 
 # 3rd party
 import pytest
@@ -69,12 +70,12 @@ def test_iter_installed_repos_errors():
 		next(iter_installed_repos(client=GitHub()))
 
 
-@pytest.mark.parametrize("event_date", [date(2020, 12, 25), date(2020, 7, 4), None])
+@pytest.mark.usefixtures("fixed_datetime")
+@pytest.mark.parametrize("event_date", [datetime.date(2020, 12, 25), datetime.date(2020, 7, 4), None])
 def test_make_footer_links_marketplace(
 		advanced_file_regression: AdvancedFileRegressionFixture,
-		fixed_datetime,
-		event_date,
-		):
+		event_date: Optional[datetime.date],
+		) -> None:
 	footer = make_footer_links(
 			"domdfcoding",
 			"octocheese",
@@ -92,12 +93,22 @@ def test_make_footer_links_marketplace(
 	advanced_file_regression.check(footer)
 
 
-@pytest.mark.parametrize("event_date", [date(2020, 12, 25), date(2020, 7, 4), None])
+@pytest.mark.usefixtures("fixed_datetime")
+@pytest.mark.parametrize(
+		"event_date",
+		[
+				datetime.date(2020, 12, 25),
+				datetime.date(2020, 7, 4),
+				datetime.date(2022, 4, 15),
+				datetime.date(2022, 10, 28),
+				None,
+				],
+		)
 def test_make_footer_links_app(
 		advanced_file_regression: AdvancedFileRegressionFixture,
-		fixed_datetime,
-		event_date,
-		):
+		event_date: Optional[datetime.date],
+		) -> None:
+
 	footer = make_footer_links(
 			"domdfcoding",
 			"repo-helper-bot",
