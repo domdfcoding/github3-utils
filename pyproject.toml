@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "github3-utils"
-version = "0.5.0"
+version = "0.6.0"
 description = "Handy utilities for github3.py"
 readme = "README.rst"
 keywords = [ "github",]
