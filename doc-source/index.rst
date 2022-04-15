@@ -5,6 +5,7 @@ github3-utils
 .. start short_desc
 
 .. documentation-summary::
+	:meta:
 
 .. end short_desc
 
@@ -59,7 +60,8 @@ github3-utils
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| requires-io-shield::
+	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/github3-utils/badge.svg
+		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/github3-utils/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::
@@ -112,7 +114,7 @@ github3-utils
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2021
+	.. |maintained| maintained-shield:: 2022
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
@@ -158,12 +160,18 @@ Contents
 	contributing
 	Source
 
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: github3-utils
+
+
 .. start links
 
 .. only:: html
 
 	View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
 
-	`Browse the GitHub Repository <https://github.com/domdfcoding/github3-utils>`__
+	:github:repo:`Browse the GitHub Repository <domdfcoding/github3-utils>`
 
 .. end links
