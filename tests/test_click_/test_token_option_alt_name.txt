@@ -4,5 +4,4 @@ Options:
   -t, --token TEXT  The token to authenticate with the GitHub API. Can also be
                     provided via the 'MA_TOKEN' environment variable.
                     [required]
-
   -h, --help        Show this message and exit.
