@@ -58,8 +58,8 @@ github3-utils
 	:target: https://github.com/domdfcoding/github3-utils/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/github3-utils/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/github3-utils/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/github3-utils/badge.svg
+	:target: https://dependency-dash.herokuapp.com/github/domdfcoding/github3-utils/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/github3-utils/master?logo=coveralls
@@ -109,7 +109,7 @@ github3-utils
 	:target: https://github.com/domdfcoding/github3-utils/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/github3-utils
