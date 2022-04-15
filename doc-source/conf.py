@@ -79,3 +79,5 @@ def setup(app):
 
 
 toctree_plus_types.add("fixture")
+nitpicky = True
+autosummary_widths_builders = ["latex"]

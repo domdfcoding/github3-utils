@@ -54,6 +54,10 @@ def build_secrets_url(repo: Repository) -> URL:
 	Returns the URL via which secrets can be checked and set.
 
 	:param repo: The repository to check/set secrets for.
+
+	:rtype:
+
+	.. latex:clearpage::
 	"""
 
 	return URL(repo._build_url("actions/secrets", base_url=repo._api))

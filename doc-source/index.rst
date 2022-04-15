@@ -124,6 +124,7 @@ github3-utils
 
 .. end shields
 
+
 Installation
 ---------------
 
@@ -137,8 +138,12 @@ Installation
 
 .. end installation
 
+
 Contents
 -------------
+
+.. html-section::
+
 
 .. toctree::
 	:hidden:
@@ -155,10 +160,17 @@ Contents
 
 .. toctree::
 	:maxdepth: 3
-	:caption: Contributing
+	:caption: About
 
 	contributing
 	Source
+	license
+
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: github3-utils
+
 
 .. sidebar-links::
 	:caption: Links

@@ -206,7 +206,9 @@ class Impersonate:
 		Any changes to environment variables made during the scope
 		of the context manager will be reset on exit.
 
-	**Example:**
+	.. latex:clearpage::
+
+	:bold-title:`Example:`
 
 	.. code-block:: python
 
@@ -274,8 +276,8 @@ def get_repos(
 	.. versionadded:: 0.5.0
 
 	:param user_or_org:
-	:param full: If :py:obj:`True` yields :class:`github3.repos.Repository` objects.
-		Otherwise, yields :class:`github3.repos.ShortRepository` objects
+	:param full: If :py:obj:`True` yields :class:`~github3.repos.repo.Repository` objects.
+		Otherwise, yields :class:`~github3.repos.repo.ShortRepository` objects
 	"""
 
 	url = user_or_org._build_url("users", user_or_org.login, "repos")

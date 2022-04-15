@@ -40,12 +40,14 @@ _C = TypeVar("_C", bound=click.Command)
 
 
 def token_option(token_var: str = "GITHUB_TOKEN") -> Callable[[_C], _C]:  # nosec: B107
-	"""
+	r"""
 	Creates a ``-t / --token`` option for the GitHub API token.
 
 	.. versionadded:: 0.2.0
 
 	:param token_var:
+
+	:rtype: :data:`~typing.Callable`\[\[:class:`click.Command`\], :class:`click.Command`\]
 	"""
 
 	return click.option(
