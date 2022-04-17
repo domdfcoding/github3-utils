@@ -205,6 +205,8 @@ def make_footer_links(
 
 	if event_date is None:
 		event_date = datetime.date.today()
+	elif isinstance(event_date, datetime.datetime):
+		event_date = event_date.date()
 
 	easter = calc_easter(event_date.year)
 	easter_margin = datetime.timedelta(days=7)

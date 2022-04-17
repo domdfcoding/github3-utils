@@ -76,6 +76,7 @@ def test_make_footer_links_marketplace(
 		advanced_file_regression: AdvancedFileRegressionFixture,
 		event_date: Optional[datetime.date],
 		) -> None:
+
 	footer = make_footer_links(
 			"domdfcoding",
 			"octocheese",
@@ -91,6 +92,25 @@ def test_make_footer_links_marketplace(
 			)
 
 	advanced_file_regression.check(footer)
+
+	if event_date is not None:
+		event_date = datetime.datetime(event_date.year, event_date.month, event_date.day)
+
+		footer = make_footer_links(
+				"domdfcoding",
+				"octocheese",
+				event_date=event_date,
+				type="marketplace",
+				docs_url="https://octocheese.readthedocs.io"
+				)
+
+		advanced_file_regression.check(footer)
+
+		footer = make_footer_links(
+				"domdfcoding", "octocheese", event_date=event_date, docs_url="https://octocheese.readthedocs.io"
+				)
+
+		advanced_file_regression.check(footer)
 
 
 @pytest.mark.usefixtures("fixed_datetime")
@@ -127,3 +147,25 @@ def test_make_footer_links_app(
 			)
 
 	advanced_file_regression.check(footer)
+
+	if event_date is not None:
+		event_date = datetime.datetime(event_date.year, event_date.month, event_date.day)
+
+		footer = make_footer_links(
+				"domdfcoding",
+				"repo-helper-bot",
+				event_date=event_date,
+				type="app",
+				docs_url=None,
+				)
+
+		advanced_file_regression.check(footer)
+
+		footer = make_footer_links(
+				"domdfcoding",
+				"repo-helper-bot",
+				event_date=event_date,
+				type="app",
+				)
+
+		advanced_file_regression.check(footer)
