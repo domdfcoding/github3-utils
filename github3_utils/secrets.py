@@ -39,14 +39,14 @@ from requests import Response
 # this package
 from typing_extensions import TypedDict
 
-__all__ = [
+__all__ = (
 		"build_secrets_url",
 		"encrypt_secret",
 		"get_public_key",
 		"get_secrets",
 		"set_secret",
 		"PublicKey",
-		]
+		)
 
 
 def build_secrets_url(repo: Repository) -> URL:

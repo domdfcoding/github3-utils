@@ -42,7 +42,7 @@ from github3.pulls import PullRequest, ShortPullRequest
 from github3.repos import Repository
 from github3.repos.commit import ShortCommit
 
-__all__ = ["Label", "check_status_labels", "Checks", "get_checks_for_pr", "label_pr_failures"]
+__all__ = ("Label", "check_status_labels", "Checks", "get_checks_for_pr", "label_pr_failures")
 
 
 @prettify_docstrings

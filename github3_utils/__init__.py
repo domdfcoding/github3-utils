@@ -78,7 +78,7 @@ __license__: str = "MIT License"
 __version__: str = "0.6.1"
 __email__: str = "dominic@davis-foster.co.uk"
 
-__all__ = [
+__all__ = (
 		"RateLimitExceeded",
 		"echo_rate_limit",
 		"get_user",
@@ -86,7 +86,7 @@ __all__ = [
 		"Impersonate",
 		"get_repos",
 		"iter_repos",
-		]
+		)
 
 
 class RateLimitExceeded(RuntimeError):

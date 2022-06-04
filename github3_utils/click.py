@@ -34,7 +34,7 @@ from typing import Callable, TypeVar
 # 3rd party
 import click
 
-__all__ = ["token_option"]
+__all__ = ("token_option", )
 
 _C = TypeVar("_C", bound=click.Command)
 

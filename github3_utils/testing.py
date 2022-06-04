@@ -51,7 +51,7 @@ from _pytest.fixtures import FixtureRequest  # nodep
 from betamax import Betamax  # type: ignore[import]  # nodep
 from github3 import GitHub
 
-__all__ = ["cassette", "github_client", "module_cassette"]
+__all__ = ("cassette", "github_client", "module_cassette")
 
 
 @pytest.fixture()

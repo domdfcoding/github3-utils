@@ -41,7 +41,7 @@ from typing_extensions import Literal
 # this package
 from github3_utils.headers import MACHINE_MAN
 
-__all__ = ["ContextSwitcher", "iter_installed_repos", "make_footer_links"]
+__all__ = ("ContextSwitcher", "iter_installed_repos", "make_footer_links")
 
 
 @attr.s
