@@ -60,7 +60,7 @@ from typing import Iterable, Iterator, List, Optional, Union, overload
 
 # 3rd party
 import attr
-from apeye import URL
+from apeye_core import URL
 from click import echo
 from github3 import GitHub
 from github3.orgs import Organization

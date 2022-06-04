@@ -1,4 +1,4 @@
-apeye>=0.5.1
+apeye-core>=1.0.0
 attrs>=20.3.0
 click>=7.1.2
 cryptography==3.3.2; platform_system != "Linux" and platform_python_implementation != "CPython"

@@ -31,7 +31,7 @@ from base64 import b64encode
 from typing import List
 
 # 3rd party
-from apeye import URL
+from apeye_core import URL
 from github3.repos import Repository
 from nacl import encoding, public
 from requests import Response

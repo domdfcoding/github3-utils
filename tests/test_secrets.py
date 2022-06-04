@@ -1,6 +1,6 @@
 # 3rd party
 import pytest
-from apeye import URL
+from apeye_core import URL
 from coincidence.regressions import AdvancedDataRegressionFixture
 from github3 import GitHub
 
