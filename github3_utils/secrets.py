@@ -37,7 +37,7 @@ from nacl import encoding, public
 from requests import Response
 
 # this package
-from github3_utils._typing import make_typed_dict
+from typing_extensions import TypedDict
 
 __all__ = [
 		"build_secrets_url",
@@ -63,7 +63,7 @@ def build_secrets_url(repo: Repository) -> URL:
 	return URL(repo._build_url("actions/secrets", base_url=repo._api))
 
 
-_PublicKey = make_typed_dict("_PublicKey", {"ETag": str, "Last-Modified": str}, total=False)
+_PublicKey = TypedDict("_PublicKey", {"ETag": str, "Last-Modified": str}, total=False)
 
 
 class PublicKey(_PublicKey):
