@@ -61,3 +61,6 @@ sphinx_conf_epilogue:
 
 additional_ignore:
  - label.py
+
+exclude_files:
+ - actions
