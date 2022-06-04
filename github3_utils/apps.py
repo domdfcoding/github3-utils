@@ -127,6 +127,8 @@ def iter_installed_repos(
 	:param private_key_pem: The bytes of the private key for this GitHub App.
 	:param app_id: The integer identifier for this GitHub App.
 
+	.. latex:clearpage::
+
 	Either ``context_switcher`` or all of ``client``, ``private_key_pem`` and ``app_id`` must be provided.
 	"""
 

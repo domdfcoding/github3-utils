@@ -40,11 +40,11 @@ extra_sphinx_extensions:
  - attr_utils.autoattrs
  - attr_utils.annotations
  - sphinx_autofixture
- - sphinx_toolbox_experimental.autosummary_widths
- - sphinx_toolbox_experimental.needspace
+ - sphinx_toolbox.more_autosummary.column_widths
 
 intersphinx_mapping:
  - '"github3": ("https://github3py.readthedocs.io/en/master/", None)'
+ - '"apeye": ("https://apeye.readthedocs.io/en/latest/", None)'
 
 extras_require:
  testing:
@@ -54,7 +54,7 @@ extras_require:
 sphinx_conf_epilogue:
  - toctree_plus_types.add("fixture")
  - nitpicky = True
- - autosummary_widths_builders = ["latex"]
+ - needspace_amount = r"5\baselineskip"
 
 additional_ignore:
  - label.py

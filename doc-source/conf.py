@@ -27,12 +27,14 @@ rst_prolog = f""".. |pkgname| replace:: github3-utils
 slug = re.sub(r'\W+', '-', project.lower())
 release = version = config.version
 
-todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
+sphinx_builder = os.environ.get("SPHINX_BUILDER", "html").lower()
+todo_include_todos = int(os.environ.get("SHOW_TODOS", 0)) and sphinx_builder != "latex"
 
 intersphinx_mapping = {
 		"python": ("https://docs.python.org/3/", None),
 		"sphinx": ("https://www.sphinx-doc.org/en/stable/", None),
 		"github3": ("https://github3py.readthedocs.io/en/master/", None),
+		"apeye": ("https://apeye.readthedocs.io/en/latest/", None),
 		}
 
 html_theme_options = {
@@ -80,4 +82,4 @@ def setup(app):
 
 toctree_plus_types.add("fixture")
 nitpicky = True
-autosummary_widths_builders = ["latex"]
+needspace_amount = r"5\baselineskip"

@@ -62,6 +62,7 @@ extensions = [
     "sphinx_toolbox.more_autosummary",
     "sphinx_toolbox.documentation_summary",
     "sphinx_toolbox.tweaks.param_dash",
+    "sphinxcontrib.toctree_plus",
     "sphinx_toolbox.tweaks.latex_layout",
     "sphinx_toolbox.tweaks.latex_toc",
     "sphinx.ext.intersphinx",
@@ -72,7 +73,6 @@ extensions = [
     "notfound.extension",
     "sphinx_copybutton",
     "sphinxcontrib.default_values",
-    "sphinxcontrib.toctree_plus",
     "sphinx_debuginfo",
     "sphinx_licenseinfo",
     "seed_intersphinx_mapping",
@@ -80,8 +80,7 @@ extensions = [
     "attr_utils.autoattrs",
     "attr_utils.annotations",
     "sphinx_autofixture",
-    "sphinx_toolbox_experimental.autosummary_widths",
-    "sphinx_toolbox_experimental.needspace",
+    "sphinx_toolbox.more_autosummary.column_widths",
 ]
 sphinxemoji_style = "twemoji"
 gitstamp_fmt = "%d %b %Y"
