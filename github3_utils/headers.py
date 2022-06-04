@@ -28,7 +28,8 @@ GitHub-specific custom HTTP headers.
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-__all__ = ["LUKE_CAKE", "MACHINE_MAN"]
+__all__ = ("LUKE_CAGE", "MACHINE_MAN")
 
-LUKE_CAKE = {"Accept": "application/vnd.github.luke-cage-preview+json"}
+# There was a typo. It used to say LUKE_CAKE. Keep the old name to avoid breakage.
+LUKE_CAKE = LUKE_CAGE = {"Accept": "application/vnd.github.luke-cage-preview+json"}
 MACHINE_MAN = {"Accept": "application/vnd.github.machine-man-preview+json"}

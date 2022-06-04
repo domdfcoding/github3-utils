@@ -70,7 +70,7 @@ from github3.users import User
 from typing_extensions import Literal
 
 # this package
-from github3_utils.headers import LUKE_CAKE
+from github3_utils.headers import LUKE_CAGE
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -179,7 +179,7 @@ def protect_branch(branch: Branch, status_checks: Optional[List[str]] = None) ->
 	resp = branch._put(
 			str(URL(branch._api) / "protection"),
 			json=edit,
-			headers=LUKE_CAKE,
+			headers=LUKE_CAGE,
 			)
 
 	if branch._boolean(resp, 200, 404):
