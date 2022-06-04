@@ -35,8 +35,6 @@ from apeye_core import URL
 from github3.repos import Repository
 from nacl import encoding, public
 from requests import Response
-
-# this package
 from typing_extensions import TypedDict
 
 __all__ = (
