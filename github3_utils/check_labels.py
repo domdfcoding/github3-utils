@@ -133,6 +133,7 @@ def get_checks_for_pr(pull: Union[PullRequest, ShortPullRequest]) -> Checks:
 	check_run: CheckRun
 	for check_run in head_commit.check_runs():
 
+		# pylint: disable=loop-invariant-statement
 		if check_run.status in {"queued", "running", "in_progress"}:
 			running.add(check_run.name)
 		elif check_run.conclusion in {"failure", "cancelled", "timed_out", "action_required"}:
@@ -143,6 +144,7 @@ def get_checks_for_pr(pull: Union[PullRequest, ShortPullRequest]) -> Checks:
 			skipped.add(check_run.name)
 		elif check_run.conclusion == "neutral":
 			neutral.add(check_run.name)
+		# pylint: enable=loop-invariant-statement
 
 	# Remove failing checks from successful etc. (as all checks appear twice for PRs)
 	successful = successful - failing - running
@@ -178,9 +180,10 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 
 	def determine_labels(from_: Set[str], to: Set[str]) -> None:
 		for check in from_:
-			if _python_dev_re.match(check):
+			if _python_dev_re.match(check):  # pylint: disable=loop-global-usage
 				continue
 
+			# pylint: disable=loop-invariant-statement
 			if check in {"Flake8", "docs"}:
 				to.add(f"failure: {check.lower()}")
 			elif check.startswith("mypy"):
@@ -189,6 +192,7 @@ def label_pr_failures(pull: Union[PullRequest, ShortPullRequest]) -> Set[str]:
 				to.add("failure: Linux")
 			elif check.startswith("windows"):
 				to.add("failure: Windows")
+			# pylint: enable=loop-invariant-statement
 
 	determine_labels(pr_checks.failing, failure_labels)
 	determine_labels(pr_checks.successful, success_labels)

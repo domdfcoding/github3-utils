@@ -305,6 +305,7 @@ def iter_repos(
 	:param orgs: An iterable of organization names to fetch the repositories for.
 	"""
 
+	# pylint: disable=loop-invariant-statement
 	for user in users:
 		_user: Optional[User] = github.user(user)
 		if _user is None:
@@ -319,3 +320,4 @@ def iter_repos(
 			raise ValueError(f"No such organization {org}")
 
 		yield from get_repos(_org, full=False)
+	# pylint: enable=loop-invariant-statement

@@ -41,7 +41,7 @@ def test_token_option_alt_name(
 
 	@token_option("MA_TOKEN")
 	@click_command()
-	def demo(token: str):
+	def demo(token: str) -> None:
 		click.echo(f"The token is: {token}")
 
 	runner = CliRunner()
