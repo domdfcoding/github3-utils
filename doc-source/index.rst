@@ -60,8 +60,8 @@ github3-utils
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/github3-utils/badge.svg
-		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/github3-utils/
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/github3-utils/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/github3-utils/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::
