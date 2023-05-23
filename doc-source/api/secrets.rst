@@ -3,3 +3,4 @@
 ============================
 
 .. automodule:: github3_utils.secrets
+	:no-show-inheritance:
