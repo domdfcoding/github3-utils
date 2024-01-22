@@ -283,7 +283,7 @@ def get_repos(
 	url = user_or_org._build_url("users", user_or_org.login, "repos")
 	params = {"type": "owner", "sort": "full_name", "direction": "asc"}
 
-	for repo in user_or_org._iter(-1, url, ShortRepository, params):
+	for repo in user_or_org._iter(-1, url, ShortRepository, params):  # type: ignore[arg-type]
 		if full:
 			yield repo.refresh()
 		else:
