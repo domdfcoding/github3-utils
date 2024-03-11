@@ -54,4 +54,4 @@ known_third_party = [
     "requests",
     "typing_extensions",
 ]
-known_first_party = "github3_utils"
+known_first_party = [ "github3_utils",]
