@@ -48,7 +48,7 @@ from typing import Iterator
 # 3rd party
 import pytest  # nodep
 from _pytest.fixtures import FixtureRequest  # nodep
-from betamax import Betamax  # type: ignore[import]  # nodep
+from betamax import Betamax  # type: ignore[import-untyped]  # nodep
 from github3 import GitHub
 
 __all__ = ("cassette", "github_client", "module_cassette")

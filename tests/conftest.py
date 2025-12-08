@@ -1,5 +1,5 @@
 # 3rd party
-from betamax import Betamax  # type: ignore[import]
+from betamax import Betamax  # type: ignore[import-untyped]
 from domdf_python_tools.paths import PathPlus
 
 with Betamax.configure() as config:

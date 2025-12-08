@@ -4,7 +4,7 @@ from typing import Optional
 
 # 3rd party
 import pytest
-from betamax import Betamax  # type: ignore[import]
+from betamax import Betamax  # type: ignore[import-untyped]
 from coincidence.regressions import AdvancedDataRegressionFixture, AdvancedFileRegressionFixture
 from domdf_python_tools.stringlist import StringList
 from github3 import GitHub

@@ -3,7 +3,7 @@ import os
 
 # 3rd party
 import pytest
-from betamax import Betamax  # type: ignore[import]
+from betamax import Betamax  # type: ignore[import-untyped]
 from coincidence.regressions import AdvancedDataRegressionFixture
 from github3 import GitHub
 from github3.exceptions import AuthenticationFailed

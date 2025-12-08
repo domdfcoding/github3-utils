@@ -56,7 +56,7 @@ Handy utilities for `github3.py <https://github3.readthedocs.io/en/latest/>`_.
 import datetime
 import os
 from contextlib import contextmanager
-from typing import Iterable, Iterator, List, Optional, Union, overload
+from typing import Iterable, Iterator, List, Optional, Union, cast, overload
 
 # 3rd party
 import attr
@@ -283,9 +283,10 @@ def get_repos(
 	url = user_or_org._build_url("users", user_or_org.login, "repos")
 	params = {"type": "owner", "sort": "full_name", "direction": "asc"}
 
-	for repo in user_or_org._iter(-1, url, ShortRepository, params):  # type: ignore[arg-type]
+	repo: ShortRepository
+	for repo in user_or_org._iter(-1, url, ShortRepository, params):  # type: ignore[arg-type,assignment]
 		if full:
-			yield repo.refresh()
+			yield cast(Repository, repo.refresh())
 		else:
 			yield repo
 
