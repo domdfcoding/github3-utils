@@ -29,10 +29,19 @@ python_versions:
  "3.13":
  pypy37:
   experimental: true
+  platforms:
+    - Linux
+    - macOS
  pypy38:
   experimental: true
+  platforms:
+    - Linux
+    - macOS
  pypy39:
   experimental: true
+  platforms:
+    - Linux
+    - macOS
 
 keywords:
  - github
