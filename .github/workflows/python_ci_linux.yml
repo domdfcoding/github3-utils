@@ -80,6 +80,7 @@ jobs:
         with:
           name: "coverage-${{ matrix.config.python-version }}"
           path: .coverage
+          include-hidden-files: true
 
 
   Coverage:
@@ -122,6 +123,7 @@ jobs:
         with:
           name: "combined-coverage"
           path: .coverage
+          include-hidden-files: true
 
       - name: "Upload Combined Coverage to Coveralls"
         if: ${{ steps.show.outcome != 'failure' }}
@@ -159,7 +161,7 @@ jobs:
 
       - name: Upload distribution to PyPI 🚀
         if: startsWith(github.ref, 'refs/tags/')
-        uses: pypa/gh-action-pypi-publish@v1.4.2
+        uses: pypa/gh-action-pypi-publish@v1.13.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_TOKEN }}
@@ -207,6 +209,7 @@ jobs:
           $CONDA/bin/conda config --set always_yes yes --set changeps1 no
           $CONDA/bin/conda update -n base conda
           $CONDA/bin/conda info -a
+          $CONDA/bin/conda install conda-forge::py-lief=0.14.1
           $CONDA/bin/conda config --add channels conda-forge
           $CONDA/bin/conda config --add channels domdfcoding
 
