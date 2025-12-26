@@ -82,13 +82,16 @@ def test_make_footer_links_marketplace(
 			"octocheese",
 			event_date=event_date,
 			type="marketplace",
-			docs_url="https://octocheese.readthedocs.io"
+			docs_url="https://octocheese.readthedocs.io",
 			)
 
 	advanced_file_regression.check(footer)
 
 	footer = make_footer_links(
-			"domdfcoding", "octocheese", event_date=event_date, docs_url="https://octocheese.readthedocs.io"
+			"domdfcoding",
+			"octocheese",
+			event_date=event_date,
+			docs_url="https://octocheese.readthedocs.io",
 			)
 
 	advanced_file_regression.check(footer)
@@ -101,13 +104,16 @@ def test_make_footer_links_marketplace(
 				"octocheese",
 				event_date=event_date,
 				type="marketplace",
-				docs_url="https://octocheese.readthedocs.io"
+				docs_url="https://octocheese.readthedocs.io",
 				)
 
 		advanced_file_regression.check(footer)
 
 		footer = make_footer_links(
-				"domdfcoding", "octocheese", event_date=event_date, docs_url="https://octocheese.readthedocs.io"
+				"domdfcoding",
+				"octocheese",
+				event_date=event_date,
+				docs_url="https://octocheese.readthedocs.io",
 				)
 
 		advanced_file_regression.check(footer)

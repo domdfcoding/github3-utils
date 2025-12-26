@@ -92,6 +92,8 @@ __all__ = (
 class RateLimitExceeded(RuntimeError):
 	"""
 	Custom exception class to indicate the GitHub rate limit has been exceeded and no further requests should be made.
+
+	:param reset_time: The time at which the rate limit will be reset.
 	"""
 
 	#: The time at which the rate limit will be reset.
