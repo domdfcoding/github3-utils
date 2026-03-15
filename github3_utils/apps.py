@@ -64,7 +64,7 @@ class ContextSwitcher:
 		Login as the GitHub app.
 		"""
 
-		self.client.login_as_app(self.private_key_pem, self.app_id)
+		self.client.login_as_app(self.private_key_pem, str(self.app_id))
 
 	def login_as_user_installation(self, username: str) -> int:
 		"""
