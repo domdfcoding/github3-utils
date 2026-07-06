@@ -221,7 +221,6 @@ class Impersonate:
 
 		with commit_as_bot():
 			...
-
 	"""
 
 	#: The name of the committer.
