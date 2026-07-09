@@ -110,7 +110,7 @@ def encrypt_secret(public_key: str, secret_value: str) -> str:
 
 	.. code-block:: python
 
-		get_secrets(repo)['key']
+		get_secrets(repo)["key"]
 	"""
 
 	pubkey = public.PublicKey(public_key.encode("utf-8"), encoding.Base64Encoder())  # type: ignore[arg-type]
